@@ -1,8 +1,4 @@
 # AWS-DevOps-Roadmap
-# **90-Day AWS & DevOps Complete Roadmap**
-
-
-
 **Cloud Fundamentals → Linux → AWS Core Services → AWS Networking & Security → DevOps Tools → CI/CD → Containers → Kubernetes → Terraform → Real-Time Project → Interview Preparation**
 
 **Daily training structure**
