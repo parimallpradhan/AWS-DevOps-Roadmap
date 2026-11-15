@@ -1,16 +1,7 @@
 # **Project 1 – AWS Web Hosting Using EC2, Nginx, S3 and IAM**
 
+<img width="1536" height="1024" alt="AWS Web Hosting Architecture Infographic" src="https://github.com/user-attachments/assets/682f3384-57d1-4576-a9bb-861b3e337402" />
 
-
-Beginner-friendly hands-on project
-
-AWS Cloud + DevOps
-
-
-
-We will implement this as a real-time AWS project that you can demonstrate to students, add to your DevOps portfolio, and publish on GitHub.
-
-The project will use an actual website hosted on an AWS EC2 instance, Nginx as the web server, S3 for static assets, and IAM roles for secure AWS access.
 
 ## **1. Project overview**
 
