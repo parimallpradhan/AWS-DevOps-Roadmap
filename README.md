@@ -167,12 +167,6 @@ Goal: Become project-ready
 
 ## **2. Major practical projects**
 
-By the end of the 90 days, You should have completed these projects:
-
-
-## AWS DevOps Projects
-
-
 ## AWS DevOps Projects
 
 ### Project 1 – AWS Web Hosting
@@ -182,30 +176,17 @@ Host a website using EC2, Apache/Nginx, S3 and IAM.
 [View Project Documentation](https://github.com/parimallpradhan/AWS-DevOps-Roadmap/blob/main/Project%201%20%E2%80%93%20AWS%20Web%20Hosting.md)
 
 
-
-**Project 1 – AWS Web Hosting**
-
-Host a website using EC2, Apache/Nginx, S3 and IAM.
-
-Days 14–25
-
-[[Building an AWS Application Load Balancer with EC2 and NGINX | D Manjunath posted on the topic | LinkedIn](https://images.openai.com/static-rsc-4/vMi53PUXXpfthEwBEksBesvEPiK-opS93AVHqyceFAaulAiRwcSgeU1cf0BYti-1nhhICH2nfWkos3yUurg_ZTQ0eHQ1HNXTxMxx-ySQczV4ojYhZMY6UZSWRpdcIQ4k0VIk12JV0lFS5mrAZ-_-2N1n7eje2fj9e7PpM2uxk_c?purpose=inline)](https://github.com/parimallpradhan/AWS-DevOps-Roadmap/blob/main/Project%201%20%E2%80%93%20AWS%20Web%20Hosting.md)]
-
 **Project 2 – Highly Available Architecture**
 
 Deploy multiple EC2 instances with VPC, ALB, Auto Scaling and CloudWatch.
 
-Days 26–40
-
-[[Securing Docker CI/CD Pipelines with Jenkins and Docker Scout (DevSecOps Guide) | Medium](https://images.openai.com/static-rsc-4/91LD651u1zNepfTB0iRh1qgwoDHzgx_OF0JHQmTuigBt-MHPHB6dXm3dRwJJm16O4yUz7f0Fjz2lEaGJdK_bWrb9Lds95HvfDnkeXz76UhZN-J0caksfkuMdLgUmN-EIRAhFjFNyVqdASBDrBRqVr9wQZl-1HJd9y2RGOh9bTiE?purpose=inline)](https://github.com/parimallpradhan/AWS-DevOps-Roadmap/blob/main/Project%202%20%E2%80%93%20Highly%20Available%20Architecture.md)]
+[View Project Documentation](https://github.com/parimallpradhan/AWS-DevOps-Roadmap/blob/main/Project%202%20%E2%80%93%20Highly%20Available%20Architecture.md)
 
 **Project 3 – CI/CD Pipeline**
 
 Automate application builds and Docker image deployment using GitHub, Maven and Jenkins.
 
-Days 59–76
-
-[[Container Orchestration with Kubernetes | by Ayush Kumar | Medium](https://images.openai.com/static-rsc-4/ffgdbEijTGHM96IfGLRAM83LzzwbpixzFsued6KheGeofEPfBMrUfY1DsfuEbSi1T9OYBbkXOyqYTEwc36oqD5sOXcaaAJGby2QkalkTcTchw-zUFeIHagsbSGe8A2b1u9yEpyoBT-FfbnndblvsEkWavnZQAdhFzaulOX38TF0?purpose=inline)](https://github.com/parimallpradhan/AWS-DevOps-Roadmap/blob/main/Project%203%20%E2%80%93%20CICD%20Pipeline.md)]
+[View Project Documentation](https://github.com/parimallpradhan/AWS-DevOps-Roadmap/blob/main/Project%203%20%E2%80%93%20CICD%20Pipeline.md)
 
 **Project 4 – Kubernetes Deployment**
 
@@ -213,16 +194,16 @@ Deploy a containerized application using Kubernetes Deployments, Services and In
 
 Days 77–85
 
-[[Real-World DevOps Pipeline with Jenkins, Terraform, and Kubernetes | Muhammad Ali Usama posted on the topic | LinkedIn](https://images.openai.com/static-rsc-4/bKCLMlz14xjebUg0injFwhrIsR4-lxXupF5bUKGNiRyYpYIGlYpI-LM-c34k7c6SuTA_VH5UtUI4bA-30jr7oo-22eO6xjt32keTSE1YHGpsukcIJxAMMAMnpnoWHneMX790HDC9EdIdU8OHSFjEscHRXSjx7VzKTJYvcsLqnto?purpose=inline)](https://github.com/parimallpradhan/AWS-DevOps-Roadmap/blob/main/Project%204%20%E2%80%93%20Kubernetes%20Deployment.md)]
+[View Project Documentation](https://github.com/parimallpradhan/AWS-DevOps-Roadmap/blob/main/Project%204%20%E2%80%93%20Kubernetes%20Deployment.md)
 
 **Project 5 – End-to-End AWS DevOps**
 
 Terraform → AWS Infrastructure → GitHub → Jenkins → Docker → Kubernetes.
 
 Days 86–90
-https://github.com/parimallpradhan/AWS-DevOps-Roadmap/blob/main/Project%205%20%E2%80%93%20End-to-End%20AWS%20DevOps.md
+[View Project Documentation](https://github.com/parimallpradhan/AWS-DevOps-Roadmap/blob/main/Project%205%20%E2%80%93%20End-to-End%20AWS%20DevOps.md)
 
-*Note:* The practical breakdown expands some topics from your original syllabus, such as Terraform modules, Kubernetes configuration and end-to-end deployment. These are suggested hands-on extensions, not additional claims about the original document.
+
 
 ## **3. Weekly progress tracking**
 
