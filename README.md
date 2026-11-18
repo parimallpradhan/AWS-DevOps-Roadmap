@@ -1,37 +1,70 @@
-# AWS-DevOps-Roadmap
-**Cloud Fundamentals → Linux → AWS Core Services → AWS Networking & Security → DevOps Tools → CI/CD → Containers → Kubernetes → Terraform → Real-Time Project → Interview Preparation**
+# 🚀 AWS & DevOps Master Roadmap – 90 Days
 
-**Daily training structure**
+**From Cloud Fundamentals to Real-Time AWS DevOps Projects**
 
-- 15 minutes – Theory
-- 30 minutes – Practical demonstration
-- 10 minutes – Hands-on practice
-- 5 minutes – Revision and questions
+A structured, hands-on learning roadmap designed to help students and aspiring engineers build practical skills in AWS, Linux, DevOps tools, CI/CD, Docker, Kubernetes and Terraform.
+
+---
+
+## 📌 Learning Journey
+
+**Cloud Fundamentals → Linux → AWS Core Services → AWS Networking & Security → DevOps Tools → CI/CD → Containers → Kubernetes → Terraform → Real-Time Projects → Interview Preparation**
+
+## 🎯 What You Will Learn
+
+- ☁️ AWS Cloud Computing and Core Services
+- 🐧 Linux Administration and Shell Scripting
+- 🔐 AWS IAM, VPC and Security
+- 🌐 AWS Networking and Infrastructure
+- 🐙 Git and GitHub
+- 🐳 Docker and Containerization
+- 🔧 Maven and Ansible
+- ⚙️ Jenkins and CI/CD Automation
+- ☸️ Kubernetes and Container Orchestration
+- 🏗️ Terraform and Infrastructure as Code
+- 🚀 Real-Time AWS DevOps Projects
+- 💼 Resume and Interview Preparation
+
+---
+
+## ⏰ Daily Training Structure
+
+Each session follows a practical, beginner-friendly learning approach.
+
+| Activity                   | Duration       |
+| -------------------------- | -------------- |
+| 📖 Theory and Concepts     | 15 Minutes     |
+| 💻 Practical Demonstration | 30 Minutes     |
+| 🛠️ Hands-on Practice      | 10 Minutes     |
+| 🔄 Revision and Questions  | 5 Minutes      |
+| **Total**                  | **60 Minutes** |
 
 Designed around approximately 1 hour of structured training daily. Additional practice time will improve results.
 
-## **1. Complete 90-day roadmap**
+---
 
-### **Phase 1 – Foundations (Days 1–10)**
+# 📚 1. Complete 90-Day Learning Roadmap
 
-Goal: Understand Cloud and Linux
+## 🟢 Phase 1 – Foundations (Days 1–10)
+
+**Goal:** Understand Cloud Computing and Linux fundamentals.
 
 | Day | Topic                                  | Practical / Assignment                      |
 | --- | -------------------------------------- | ------------------------------------------- |
-| 1   | Cloud Computing Introduction           | Understand cloud computing and its benefits |
-| 2   | Public, Private & Hybrid Cloud         | Compare cloud deployment models             |
-| 3   | IaaS, PaaS & SaaS                      | Identify real-world use cases               |
-| 4   | Linux Introduction & Installation      | Install Ubuntu on VirtualBox                |
-| 5   | Linux Basic Commands                   | Practice navigation and file commands       |
-| 6   | Linux File System & Package Management | Install and remove packages                 |
-| 7   | Linux Users, Groups & Permissions      | Create users and configure permissions      |
-| 8   | Linux Process & Service Management     | Manage processes and services               |
-| 9   | Shell Scripting                        | Write basic shell scripts                   |
+| 01  | Cloud Computing Introduction           | Understand cloud computing and its benefits |
+| 02  | Public, Private & Hybrid Cloud         | Compare cloud deployment models             |
+| 03  | IaaS, PaaS & SaaS                      | Identify real-world use cases               |
+| 04  | Linux Introduction & Installation      | Install Ubuntu on VirtualBox                |
+| 05  | Linux Basic Commands                   | Practice navigation and file commands       |
+| 06  | Linux File System & Package Management | Install and remove packages                 |
+| 07  | Linux Users, Groups & Permissions      | Create users and configure permissions      |
+| 08  | Linux Process & Service Management     | Manage processes and services               |
+| 09  | Shell Scripting                        | Write basic shell scripts                   |
 | 10  | Linux Revision & Assessment            | Complete Linux practical assignment         |
 
-### **Phase 2 – AWS Core Services (Days 11–25)**
+## 🔵 Phase 2 – AWS Core Services (Days 11–25)
 
-Goal: Build AWS fundamentals
+**Goal:** Build strong AWS fundamentals and understand essential cloud services.
 
 | Day | Topic                                    | Practical / Assignment                  |
 | --- | ---------------------------------------- | --------------------------------------- |
@@ -51,9 +84,9 @@ Goal: Build AWS fundamentals
 | 24  | ElastiCache & Database Overview          | Understand caching use cases            |
 | 25  | AWS Core Services Revision               | Complete EC2 + S3 + RDS assignment      |
 
-### **Phase 3 – AWS Networking & Infrastructure (Days 26–40)**
+## 🟣 Phase 3 – AWS Networking & Infrastructure (Days 26–40)
 
-Goal: Deploy production-style AWS infrastructure
+**Goal:** Build and deploy production-style AWS infrastructure.
 
 | Day | Topic                           | Practical / Assignment                    |
 | --- | ------------------------------- | ----------------------------------------- |
@@ -73,9 +106,9 @@ Goal: Deploy production-style AWS infrastructure
 | 39  | CloudTrail                      | Monitor AWS account activity              |
 | 40  | AWS Networking Project          | Deploy a highly available web application |
 
-### **Phase 4 – Advanced AWS Services (Days 41–50)**
+## 🟠 Phase 4 – Advanced AWS Services (Days 41–50)
 
-Goal: Learn automation, security and application services
+**Goal:** Learn automation, security and application services.
 
 | Day | Topic                           | Practical / Assignment                   |
 | --- | ------------------------------- | ---------------------------------------- |
@@ -90,9 +123,9 @@ Goal: Learn automation, security and application services
 | 49  | Storage Gateway, Snowball & DMS | Understand hybrid storage and migration  |
 | 50  | AWS Security Revision           | Complete AWS security assignment         |
 
-### **Phase 5 – DevOps Fundamentals & Git (Days 51–58)**
+## 🟡 Phase 5 – DevOps Fundamentals & Git (Days 51–58)
 
-Goal: Understand DevOps and source code management
+**Goal:** Understand DevOps culture, lifecycle and source code management.
 
 | Day | Topic                       | Practical / Assignment                      |
 | --- | --------------------------- | ------------------------------------------- |
@@ -105,9 +138,9 @@ Goal: Understand DevOps and source code management
 | 57  | GitHub Collaboration        | Pull requests and conflict resolution       |
 | 58  | Git Project                 | Create and manage a complete GitHub project |
 
-### **Phase 6 – Docker & Containerization (Days 59–66)**
+## 🔴 Phase 6 – Docker & Containerization (Days 59–66)
 
-Goal: Containerize applications
+**Goal:** Understand containerization and deploy applications using Docker.
 
 | Day | Topic                                  | Practical / Assignment            |
 | --- | -------------------------------------- | --------------------------------- |
@@ -120,9 +153,9 @@ Goal: Containerize applications
 | 65  | Docker Hub & Image Management          | Push images to Docker Hub         |
 | 66  | Docker Swarm & Container Orchestration | Deploy a basic Swarm application  |
 
-### **Phase 7 – Maven, Ansible & Jenkins (Days 67–76)**
+## 🟤 Phase 7 – Maven, Ansible & Jenkins (Days 67–76)
 
-Goal: Automate builds and deployments
+**Goal:** Automate application builds, configuration management and deployments.
 
 | Day | Topic                             | Practical / Assignment                   |
 | --- | --------------------------------- | ---------------------------------------- |
@@ -137,9 +170,9 @@ Goal: Automate builds and deployments
 | 75  | Jenkins Pipeline                  | Create CI/CD pipeline using Jenkinsfile  |
 | 76  | End-to-End CI/CD                  | GitHub → Maven → Jenkins → Docker        |
 
-### **Phase 8 – Kubernetes & Terraform (Days 77–85)**
+## 🔷 Phase 8 – Kubernetes & Terraform (Days 77–85)
 
-Goal: Master container orchestration and infrastructure automation
+**Goal:** Learn container orchestration and infrastructure automation.
 
 | Day | Topic                                  | Practical / Assignment                         |
 | --- | -------------------------------------- | ---------------------------------------------- |
@@ -153,9 +186,9 @@ Goal: Master container orchestration and infrastructure automation
 | 84  | Terraform Providers, Variables & State | Connect Terraform with AWS                     |
 | 85  | Terraform AWS Infrastructure           | Create VPC, EC2 and S3 using Terraform         |
 
-### **Phase 9 – Real-Time Project & Interview Preparation (Days 86–90)**
+## 🏆 Phase 9 – Real-Time Project & Interview Preparation (Days 86–90)
 
-Goal: Become project-ready
+**Goal:** Apply the learning through a real-time project and prepare for interviews.
 
 | Day | Topic                                       | Practical / Assignment                            |
 | --- | ------------------------------------------- | ------------------------------------------------- |
@@ -165,78 +198,115 @@ Goal: Become project-ready
 | 89  | Resume & Interview Preparation              | Prepare resume and AWS/DevOps interview questions |
 | 90  | Final Project Presentation & Mock Interview | Present project and complete final assessment     |
 
-## **2. Major practical projects**
+---
 
-## AWS DevOps Projects
+# 🚀 2. Major Hands-on AWS & DevOps Projects
 
-### Project 1 – AWS Web Hosting
+The following projects are designed to provide practical exposure to AWS infrastructure, application hosting, CI/CD automation and container orchestration.
 
-Host a website using EC2, Apache/Nginx, S3 and IAM.
+## ☁️ Project 1 – AWS Web Hosting
 
-[View Project Documentation](https://github.com/parimallpradhan/AWS-DevOps-Roadmap/blob/main/Project%201%20%E2%80%93%20AWS%20Web%20Hosting.md)
+**Objective:** Host a website using EC2, Apache/Nginx, S3 and IAM.
 
-
-**Project 2 – Highly Available Architecture**
-
-Deploy multiple EC2 instances with VPC, ALB, Auto Scaling and CloudWatch.
-
-[View Project Documentation](https://github.com/parimallpradhan/AWS-DevOps-Roadmap/blob/main/Project%202%20%E2%80%93%20Highly%20Available%20Architecture.md)
-
-**Project 3 – CI/CD Pipeline**
-
-Automate application builds and Docker image deployment using GitHub, Maven and Jenkins.
-
-[View Project Documentation](https://github.com/parimallpradhan/AWS-DevOps-Roadmap/blob/main/Project%203%20%E2%80%93%20CICD%20Pipeline.md)
-
-**Project 4 – Kubernetes Deployment**
-
-Deploy a containerized application using Kubernetes Deployments, Services and Ingress.
-
-[View Project Documentation](https://github.com/parimallpradhan/AWS-DevOps-Roadmap/blob/main/Project%204%20%E2%80%93%20Kubernetes%20Deployment.md)
-
-**Project 5 – End-to-End AWS DevOps**
-
-Terraform → AWS Infrastructure → GitHub → Jenkins → Docker → Kubernetes.
-
-
-[View Project Documentation](https://github.com/parimallpradhan/AWS-DevOps-Roadmap/blob/main/Project%205%20%E2%80%93%20End-to-End%20AWS%20DevOps.md)
+**Technologies:** AWS EC2 | Apache/Nginx | S3 | IAM
 
 
 
-## **3. Weekly progress tracking**
+📘 [**View Project Documentation →**](https://github.com/parimallpradhan/AWS-DevOps-Roadmap/blob/main/Project%201%20%E2%80%93%20AWS%20Web%20Hosting.md)
 
-Use this checklist to monitor students' progress.
+---
 
-**90-day completion tracker**
+## 🌐 Project 2 – Highly Available Architecture
 
-0/13 completed
+**Objective:** Deploy multiple EC2 instances with VPC, ALB, Auto Scaling and CloudWatch.
 
-**Week 1** – Cloud fundamentals and Linux basics
-
-**Week 2** – Linux and AWS introduction
-
-**Week 3** – IAM, EC2 and S3
-
-**Week 4** – AWS storage and databases
-
-**Week 5** – VPC and networking
-
-**Week 6** – Load balancing and Auto Scaling
-
-**Week 7** – Advanced AWS services and security
-
-**Week 8** – DevOps fundamentals and Git
-
-**Week 9** – Docker and containerization
-
-**Week 10** – Maven and Ansible
-
-**Week 11** – Jenkins and CI/CD
-
-**Week 12** – Kubernetes and Terraform
-
-**Final 6 days** – Real-time project and interviews
+**Technologies:** AWS VPC | EC2 | ALB | Auto Scaling | CloudWatch
 
 
 
+📘 [**View Project Documentation →**](https://github.com/parimallpradhan/AWS-DevOps-Roadmap/blob/main/Project%202%20%E2%80%93%20Highly%20Available%20Architecture.md)
+
+---
+
+## ⚙️ Project 3 – CI/CD Pipeline
+
+**Objective:** Automate application builds and Docker image deployment using GitHub, Maven and Jenkins.
+
+**Technologies:** GitHub | Maven | Jenkins | Docker
+
+
+
+📘 [**View Project Documentation →**](https://github.com/parimallpradhan/AWS-DevOps-Roadmap/blob/main/Project%203%20%E2%80%93%20CICD%20Pipeline.md)
+
+---
+
+## ☸️ Project 4 – Kubernetes Deployment
+
+**Objective:** Deploy a containerized application using Kubernetes Deployments, Services and Ingress.
+
+**Technologies:** Docker | Kubernetes | Deployments | Services | Ingress
+
+
+
+📘 [**View Project Documentation →**](https://github.com/parimallpradhan/AWS-DevOps-Roadmap/blob/main/Project%204%20%E2%80%93%20Kubernetes%20Deployment.md)
+
+---
+
+## 🏗️ Project 5 – End-to-End AWS DevOps
+
+**Objective:** Integrate infrastructure provisioning, source code management, CI/CD automation, containerization and Kubernetes deployment.
+
+**Technologies:** Terraform → AWS Infrastructure → GitHub → Jenkins → Docker → Kubernetes
+
+📘 [**View Project Documentation →**](https://github.com/parimallpradhan/AWS-DevOps-Roadmap/blob/main/Project%205%20%E2%80%93%20End-to-End%20AWS%20DevOps.md)
+
+---
+
+# 📅 3. Weekly Progress Tracking
+
+Use this checklist to monitor learning progress throughout the 90-day program.
+
+### Student Progress Tracker
+
+- **Week 1** – Cloud fundamentals and Linux basics
+- **Week 2** – Linux and AWS introduction
+- **Week 3** – IAM, EC2 and S3
+- **Week 4** – AWS storage and databases
+- **Week 5** – VPC and networking
+- **Week 6** – Load balancing and Auto Scaling
+- **Week 7** – Advanced AWS services and security
+- **Week 8** – DevOps fundamentals and Git
+- **Week 9** – Docker and containerization
+- **Week 10** – Maven and Ansible
+- **Week 11** – Jenkins and CI/CD
+- **Week 12** – Kubernetes and Terraform
+- **Final 6 Days** – Real-time project and interviews
+
+---
+
+# 🎓 4. Expected Learning Outcomes
+
+By completing this roadmap, learners will have practical exposure to:
+
+- AWS cloud infrastructure and core services.
+- Linux administration and shell scripting.
+- AWS networking, security and monitoring.
+- Git and GitHub source code management.
+- Docker image creation and container deployment.
+- Maven-based application builds.
+- Ansible configuration management.
+- Jenkins CI/CD pipeline automation.
+- Kubernetes application deployment.
+- Terraform-based AWS infrastructure provisioning.
+- End-to-end AWS DevOps project implementation.
+
+## 💼 Career Roles to Explore
+
+- Cloud / DevOps Trainee
+- Junior DevOps Engineer
+- AWS Cloud Engineer (Fresher)
+- AWS Cloud Support Associate
+- Cloud Operations Engineer
+
+---
 
