@@ -192,15 +192,13 @@ Automate application builds and Docker image deployment using GitHub, Maven and 
 
 Deploy a containerized application using Kubernetes Deployments, Services and Ingress.
 
-Days 77–85
-
 [View Project Documentation](https://github.com/parimallpradhan/AWS-DevOps-Roadmap/blob/main/Project%204%20%E2%80%93%20Kubernetes%20Deployment.md)
 
 **Project 5 – End-to-End AWS DevOps**
 
 Terraform → AWS Infrastructure → GitHub → Jenkins → Docker → Kubernetes.
 
-Days 86–90
+
 [View Project Documentation](https://github.com/parimallpradhan/AWS-DevOps-Roadmap/blob/main/Project%205%20%E2%80%93%20End-to-End%20AWS%20DevOps.md)
 
 
