@@ -1,8 +1,4 @@
-[AWS Storage - Part 4: Amazon S3 - DEV Community](https://images.openai.com/static-rsc-4/dREq2v371Be2b98oJ91fUl5ZXEQaScjESjG0g2x5PC5hI7qAb8bO7BEs14FvHww1_T-JkZKoxjoViSm6tjkfX2_SErWjYkoy8LDQZQ2wDvfhq3PKuoxFToC7M8TJFhgLu7Pug6HSUaP62a4ANBmit2QQNc228y9y17yHueSnQ30?purpose=inline)
-
-[dev.to](https://dev.to/hulk-pham/aws-storage-part-4-amazon-s3-1kki?utm_source=chatgpt.com)
-
-**What is Amazon S3?**
+## **What is Amazon S3?**
 
 Amazon S3 is an object storage service provided by AWS. We can store different types of data such as:
 
@@ -13,7 +9,12 @@ Amazon S3 is an object storage service provided by AWS. We can store different t
 - Static website files
 - Application deployment packages
 
-**Real-time example:**
+
+
+<img width="923" height="616" alt="image" src="https://github.com/user-attachments/assets/0719fb86-dab5-4f53-b183-3bcc391b0f99" />
+
+
+## **Real-time example:**
 
 Imagine an e-commerce application like Amazon.
 
@@ -25,6 +26,11 @@ For example:
 - Application sends the image to S3.
 - S3 stores the image as an object.
 - Application retrieves the image whenever required.
+
+
+
+<img width="926" height="342" alt="image" src="https://github.com/user-attachments/assets/10888a88-c24c-4dc1-8dc8-8262ad0c5c20" />
+
 
 [AWS Storage - Part 4: Amazon S3 - DEV Community](https://images.openai.com/static-rsc-4/XIOlpDCwljoY5lCMoQ8a42_xcTAMXon5jIpMFriNyuGMND7fNvAANVu3UN2-o9k59LsJQfWYHS43PdHYKg8xYYA4oKXn2SZunaEOpr6bcQq4bYAljdivtqI23aTPVBDJZE4o-iDP6TiO6BtjPeMlemcurRIYEUcMbLDBviuST7k?purpose=inline)
 
