@@ -48,8 +48,6 @@ For example:
 
 # **2. S3 Versioning**
 
-Topic 1 from your image
-
 ## **What is S3 Versioning?**
 
 S3 Versioning allows us to maintain multiple versions of the same object inside an S3 bucket.
