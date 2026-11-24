@@ -1,4 +1,4 @@
-# Shopping Website Product Images using Amazon S3 + EC2
+# Project : Shopping Website Product Images using Amazon S3 + EC2
 
 **Project Name:** Shopping Website Product Images – EC2 Web Server + Amazon S3 Image Storage
 
@@ -14,6 +14,8 @@ Seller uploads images → S3 Bucket (private) → IAM Role (read-only) → EC2 (
 4. Install Apache and AWS CLI on EC2.
 5. Pull the product images from S3 to the web root using AWS CLI.
 6. Create `index.html` and browse the website using the EC2 public IP.
+
+
 
 ---
 
@@ -60,7 +62,11 @@ An online shopping company has an e-commerce website hosted on an EC2 server. Se
 
 ---
 
+
+
 ## 2. Architecture
+
+<img width="936" height="676" alt="image" src="https://github.com/user-attachments/assets/b6461916-f325-4cc4-8336-faac2a40e9e2" />
 
 ```
                  +-----------------------+
