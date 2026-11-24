@@ -1,6 +1,9 @@
-# Project : Shopping Website Product Images using Amazon S3 + EC2
+# Shopping Website Product Images using Amazon S3 + EC2
 
 **Project Name:** Shopping Website Product Images – EC2 Web Server + Amazon S3 Image Storage
+
+<img width="936" height="676" alt="image" src="https://github.com/user-attachments/assets/a2ee16a2-6084-483a-a0aa-b6b75d37ec09" />
+
 
 **Project Flow:**
 
@@ -14,8 +17,6 @@ Seller uploads images → S3 Bucket (private) → IAM Role (read-only) → EC2 (
 4. Install Apache and AWS CLI on EC2.
 5. Pull the product images from S3 to the web root using AWS CLI.
 6. Create `index.html` and browse the website using the EC2 public IP.
-
-
 
 ---
 
@@ -62,11 +63,7 @@ An online shopping company has an e-commerce website hosted on an EC2 server. Se
 
 ---
 
-
-
 ## 2. Architecture
-
-<img width="936" height="676" alt="image" src="https://github.com/user-attachments/assets/b6461916-f325-4cc4-8336-faac2a40e9e2" />
 
 ```
                  +-----------------------+
@@ -134,8 +131,16 @@ An online shopping company has an e-commerce website hosted on an EC2 server. Se
    ```
    shopping-product-images-2026-12345
    ```
+
+   <img width="1500" height="513" alt="image" src="https://github.com/user-attachments/assets/e09a981d-4034-4cd8-b82a-e0ad48c24c02" />
+   
+
 3. Select your AWS Region, for example `ap-south-1`.
 4. Keep **Block all public access** **enabled**.
+
+ <img width="1492" height="363" alt="image" src="https://github.com/user-attachments/assets/dd1895d2-912b-4b77-af06-dbe0967a52cc" />
+
+
 5. Click **Create bucket**.
 
 ---
@@ -146,6 +151,8 @@ An online shopping company has an e-commerce website hosted on an EC2 server. Se
 2. Keep **Block all public access** enabled (the images stay private).
 3. Click **Upload → Add files** and select your product images, such as `mobile.jpg` and `laptop.jpg`.
 4. Click **Upload**.
+
+<img width="1492" height="339" alt="image" src="https://github.com/user-attachments/assets/9e823e0e-6b98-4852-a663-77df90961f87" />
 
 ---
 
@@ -176,11 +183,26 @@ Create an IAM role so that EC2 can read from the bucket securely.
 4. Give the role a name, for example `EC2-S3-ReadOnly-Role`.
 5. Click **Create role**.
 
+<img width="1500" height="348" alt="image" src="https://github.com/user-attachments/assets/6121a6ae-1e02-46df-98f7-180a0b2856cc" />
+
+
+<img width="1500" height="349" alt="image" src="https://github.com/user-attachments/assets/56635431-e777-49d3-bef9-4f78e3076f74" />
+
+<img width="1500" height="202" alt="image" src="https://github.com/user-attachments/assets/0cca6859-7efe-45f6-882a-ac3984b891e3" />
+
+
+<img width="1500" height="428" alt="image" src="https://github.com/user-attachments/assets/6aae3d85-39fd-4cbc-a8a2-1681415dafef" />
+
+
 ---
 
 ## 7. Step 4: Launch an Ubuntu EC2 Instance and Attach the IAM Role
 
 1. Open **AWS Console → EC2 → Launch instance**.
+
+<img width="1322" height="397" alt="image" src="https://github.com/user-attachments/assets/4e16f221-afab-4f8c-bebd-7190e52e20e7" />
+
+
 2. Choose **Ubuntu** as the AMI and select an instance type (e.g. `t2.micro` / `t3.micro`).
 3. Select your key pair.
 4. Configure the **Security Group**:
@@ -192,7 +214,19 @@ Create an IAM role so that EC2 can read from the bucket securely.
 
 5. Under **Advanced details → IAM instance profile**, select `EC2-S3-ReadOnly-Role`.
    *(For an already running instance: **Actions → Security → Modify IAM role** and attach the role.)*
-6. Click **Launch instance**.
+
+   <img width="1500" height="390" alt="image" src="https://github.com/user-attachments/assets/0d72f02a-5c31-4fc7-9dfa-44936406b3b3" />
+
+   <img width="1500" height="398" alt="image" src="https://github.com/user-attachments/assets/0f0071ca-b667-4ffe-8b7c-61850796b04b" />
+
+
+7. Click **Launch instance**.
+
+<img width="1500" height="434" alt="image" src="https://github.com/user-attachments/assets/6d3141bf-ffe6-4fd5-a7da-a20f6a526bb9" />
+
+
+<img width="1500" height="329" alt="image" src="https://github.com/user-attachments/assets/535a27fa-9dc5-4f15-8d44-626d79a596ce" />
+
 
 ---
 
