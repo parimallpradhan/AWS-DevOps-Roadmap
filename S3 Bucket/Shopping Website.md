@@ -264,6 +264,10 @@ Create an IAM role so that EC2 can read from the bucket securely.
    ```bash
    sudo aws s3 cp s3://YOUR-BUCKET-NAME/ /var/www/html/ --recursive
    ```
+
+<img width="1500" height="213" alt="image" src="https://github.com/user-attachments/assets/8b059fd7-e663-46ce-bcc1-1a39ab7d86fa" />
+
+   
 3. Confirm the files are present:
    ```bash
    ls -l /var/www/html/
