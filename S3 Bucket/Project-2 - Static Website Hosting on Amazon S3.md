@@ -1,5 +1,8 @@
 # Project-2 - Static Website Hosting on Amazon S3
 
+<img width="1327" height="534" alt="image" src="https://github.com/user-attachments/assets/b2fb74a2-c58b-4aae-abf9-e3f9ba5a929b" />
+
+
 ## Problem Statement
 
 A tourism company wants to publish a simple website (HTML, CSS, JavaScript and images) on the internet.
