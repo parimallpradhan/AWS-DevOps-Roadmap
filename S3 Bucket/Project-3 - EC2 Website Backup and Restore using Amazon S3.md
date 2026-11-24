@@ -64,6 +64,7 @@ This project protects the website content by:
 
 ## 2. Architecture
 
+<img width="2600" height="1480" alt="architecture" src="https://github.com/user-attachments/assets/c5cb8c0d-454d-4b44-8086-ea4ba6fc0064" />
 
 
 | Component | Purpose |
