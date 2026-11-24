@@ -105,11 +105,18 @@ You upload the files to a bucket, enable static website hosting, and S3 serves t
 1. Log in to the **AWS Management Console**.
 2. Open **Amazon S3**.
 3. Click **Create bucket**.
+
+<img width="1460" height="309" alt="image" src="https://github.com/user-attachments/assets/75cd7bb8-760e-459a-b303-4df733c7a990" />
+
 4. Enter a unique bucket name, for example:
    ```
    my-tourism-website-2026
    ```
+<img width="1460" height="389" alt="image" src="https://github.com/user-attachments/assets/278e70ef-e45b-41e0-b6b3-01f87577acbd" />
+
 5. Select your **AWS Region**, such as `us-east-1`.
+
+
 
 ---
 
@@ -121,6 +128,12 @@ For a basic public static website demo:
 2. Tick the checkbox to **acknowledge the warning**.
 3. Click **Create bucket**.
 
+
+<img width="1500" height="355" alt="image" src="https://github.com/user-attachments/assets/7ad57bff-a2d8-4e1f-aac8-b52f1d268386" />
+
+<img width="1500" height="334" alt="image" src="https://github.com/user-attachments/assets/1f4b14af-fd38-4451-b0aa-a86db8928a72" />
+
+
 > **Security note:** This makes it possible for the bucket to be public. Only do this for buckets that contain files you want everyone to see, and never store private data in this bucket.
 
 ---
@@ -129,15 +142,23 @@ For a basic public static website demo:
 
 1. Open the bucket you just created.
 2. Click **Upload**.
-3. Click **Add files** and select your `index.html` file.
-4. Upload any additional HTML, CSS, JavaScript and image files your website requires.
-5. Click **Upload** to finish.
+   
+<img width="1500" height="387" alt="image" src="https://github.com/user-attachments/assets/971af3e1-5fc5-41d6-9661-35ff0ddb6935" />
+
+
+4. Click **Add files** and select your `index.html` file.
+5. Upload any additional HTML, CSS, JavaScript and image files your website requires.
+6. Click **Upload** to finish.
 
 ---
 
 ## 7. Step 4: Add the Bucket Policy
 
 1. In the bucket, go to **Permissions → Bucket policy**.
+
+<img width="1500" height="268" alt="image" src="https://github.com/user-attachments/assets/fc8214d4-5ed2-4681-b00d-211b3ef45435" />
+
+
 2. Click **Edit** and add the following policy. Replace `my-tourism-website-2026` with **your actual bucket name**:
 
    ```json
@@ -154,6 +175,26 @@ For a basic public static website demo:
        ]
    }
    ```
+   
+<img width="1500" height="453" alt="image" src="https://github.com/user-attachments/assets/412001ad-8571-4c2f-a2f1-98e05f17a4b8" />
+
+{
+    "Version": "2012-10-17",
+    "Statement": [
+       {
+            "Sid": "PublicReadWebsiteFiles",
+            "Effect": "Allow",
+            "Principal": "*",
+            "Action": "s3:GetObject",
+            "Resource": "arn:aws:s3:::my-tourism-website-2026/*"
+        }
+    ]
+}
+<img width="661" height="383" alt="image" src="https://github.com/user-attachments/assets/24a898b0-34f7-4748-b080-fa39dd25d25e" />
+
+
+
+
 
 3. Click **Save changes**.
 
