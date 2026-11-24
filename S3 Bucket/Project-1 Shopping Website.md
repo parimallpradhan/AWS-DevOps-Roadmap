@@ -1,4 +1,4 @@
-# Shopping Website Product Images using Amazon S3 + EC2
+# Project: -1 Shopping Website Product Images using Amazon S3 + EC2
 
 **Project Name:** Shopping Website Product Images – EC2 Web Server + Amazon S3 Image Storage
 
