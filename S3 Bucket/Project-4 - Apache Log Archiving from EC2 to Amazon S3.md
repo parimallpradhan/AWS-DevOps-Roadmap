@@ -93,6 +93,8 @@ Logs are valuable for **troubleshooting, security investigation, auditing and tr
 - Permission to create S3 buckets and IAM roles
 - Basic knowledge of Linux commands
 
+
+
 ---
 
 ## 4. Step 1: Create an S3 Bucket
@@ -143,7 +145,11 @@ Logs are valuable for **troubleshooting, security investigation, auditing and tr
    ls -lh /var/log/apache2/
    ```
    You should see files such as `access.log` and `error.log` (and rotated files like `access.log.1` or `access.log.2.gz`).
-3. Confirm the IAM role works:
+
+   <img width="1357" height="224" alt="image" src="https://github.com/user-attachments/assets/de57cda6-ba37-46c7-9a1a-6e688288dd9a" />
+   
+
+4. Confirm the IAM role works:
    ```bash
    aws s3 ls
    ```
@@ -166,6 +172,9 @@ aws s3 cp /var/log/apache2/ s3://your-bucket-name/apache-logs/ --recursive
 
 > If you get `Permission denied` on some log files, run the command with `sudo`. The instance role credentials still work with `sudo`.
 
+
+<img width="1362" height="141" alt="image" src="https://github.com/user-attachments/assets/7894e1f4-0a79-4fd5-944d-c2ea9f69370f" />
+
 ---
 
 ## 8. Step 5: Verify the Files in S3
@@ -175,6 +184,8 @@ List the uploaded files from the command line:
 ```bash
 aws s3 ls s3://your-bucket-name/apache-logs/
 ```
+
+<img width="1313" height="124" alt="image" src="https://github.com/user-attachments/assets/8cf5ca92-5c6b-4947-81f8-c5b8068916e2" />
 
 You can also check in the console: **S3 → your bucket → apache-logs/**.
 
@@ -189,6 +200,7 @@ You can also check in the console: **S3 → your bucket → apache-logs/**.
    aws s3 cp s3://your-bucket-name/apache-logs/access.log /tmp/access.log
    tail -n 5 /tmp/access.log
    ```
+<img width="1339" height="252" alt="image" src="https://github.com/user-attachments/assets/9dc5c9a1-fcaf-4c32-bb86-72f78929c58e" />
 
 ---
 
