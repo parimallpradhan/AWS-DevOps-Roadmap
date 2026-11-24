@@ -75,7 +75,8 @@ You upload the files to a bucket, enable static website hosting, and S3 serves t
 
 ## 2. Architecture
 
-![Architecture Diagram](images/architecture.png)
+<img width="2301" height="1031" alt="architecture" src="https://github.com/user-attachments/assets/f7e34b2d-941d-4bb7-901d-b310a147b857" />
+
 
 | Component | Purpose |
 |-----------|---------|
