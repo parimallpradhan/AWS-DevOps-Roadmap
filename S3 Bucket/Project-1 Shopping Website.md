@@ -272,6 +272,10 @@ Create an IAM role so that EC2 can read from the bucket securely.
    ```bash
    ls -l /var/www/html/
    ```
+   
+
+
+<img width="1500" height="479" alt="image" src="https://github.com/user-attachments/assets/8f256271-52bb-4c1f-ae64-9c6969b2beac" />
 
 ---
 
@@ -281,6 +285,9 @@ Create an IAM role so that EC2 can read from the bucket securely.
    ```bash
    sudo vi /var/www/html/index.html
    ```
+
+<img width="1500" height="63" alt="image" src="https://github.com/user-attachments/assets/0dc0ab5c-b245-4cd6-9822-ff039bc1225d" />
+   
 2. Add the shopping website HTML (the image names must match the files you downloaded):
    ```html
    <!DOCTYPE html>
@@ -306,6 +313,9 @@ Create an IAM role so that EC2 can read from the bucket securely.
    sudo systemctl restart apache2
    ```
 
+   <img width="1500" height="479" alt="image" src="https://github.com/user-attachments/assets/252380d5-c3f3-41c4-b993-35be2793d14c" />
+
+
 > **Note:** If you use different image file names, update the `src` values accordingly. File names containing spaces also work, but simple names like `mobile.jpg` are easier to manage.
 
 ---
@@ -321,7 +331,35 @@ Create an IAM role so that EC2 can read from the bucket securely.
    - The page **My Shopping Store** loads.
    - Both product images (mobile and laptop) display correctly along with their prices.
 
+     
+<img width="1176" height="704" alt="image" src="https://github.com/user-attachments/assets/0feb738a-327a-4a8d-ad83-d5d186e074ec" />
+
+
+## index.html code
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Shopping Store</title>
+</head>
+<body>
+    <h1>Welcome to My Shopping Store</h1>
+
+    <h2>Mobile Phone</h2>
+    <img src="Modern Smartphone Desk Mockup (1).png" alt="Mobile Phone" width="200">
+    <p>Price: ₹15,000</p>
+
+    <h2>Laptop</h2>
+    <img src="Modern Laptop Workspace with Mountain View.png" alt="Laptop" width="200">
+    <p>Price: ₹45,000</p>
+</body>
+</html>
+<img width="979" height="533" alt="image" src="https://github.com/user-attachments/assets/40b6468b-18fd-47a1-9563-210eccecefde" />
+
 ---
+
+
+
 
 ## 12. Troubleshooting
 
