@@ -178,18 +178,7 @@ For a basic public static website demo:
    
 <img width="1500" height="453" alt="image" src="https://github.com/user-attachments/assets/412001ad-8571-4c2f-a2f1-98e05f17a4b8" />
 
-{
-    "Version": "2012-10-17",
-    "Statement": [
-       {
-            "Sid": "PublicReadWebsiteFiles",
-            "Effect": "Allow",
-            "Principal": "*",
-            "Action": "s3:GetObject",
-            "Resource": "arn:aws:s3:::my-tourism-website-2026/*"
-        }
-    ]
-}
+
 <img width="661" height="383" alt="image" src="https://github.com/user-attachments/assets/24a898b0-34f7-4748-b080-fa39dd25d25e" />
 
 
@@ -203,7 +192,13 @@ For a basic public static website demo:
 ## 8. Step 5: Enable Static Website Hosting
 
 1. Open the **Properties** tab of the bucket.
+
+<img width="1500" height="384" alt="image" src="https://github.com/user-attachments/assets/434db822-e3b4-468a-aad1-f271f9f655ce" />
+
 2. Scroll down to **Static website hosting** and click **Edit**.
+
+<img width="1488" height="330" alt="image" src="https://github.com/user-attachments/assets/9ffa63ee-0a70-4dfa-9744-c3582d63379f" />
+
 3. Select **Enable**.
 4. Choose **Host a static website**.
 5. Enter `index.html` as the **Index document**.
@@ -214,12 +209,17 @@ For a basic public static website demo:
 ## 9. Step 6: Open the Website Endpoint and Verify
 
 1. Go back to **Properties → Static website hosting**.
+
+<img width="1500" height="98" alt="image" src="https://github.com/user-attachments/assets/986242df-d8f0-423d-a5dd-1e9b5654a9f0" />
+
 2. Copy the **Bucket website endpoint**. It looks like this:
    ```
    http://my-tourism-website-2026.s3-website-us-east-1.amazonaws.com
    ```
 3. Open the endpoint in your browser.
 4. Verify that your website loads, including its CSS, JavaScript and images.
+
+<img width="1500" height="580" alt="image" src="https://github.com/user-attachments/assets/ec3543ca-6791-4d2a-af3b-1cfab0864e6f" />
 
 ---
 
