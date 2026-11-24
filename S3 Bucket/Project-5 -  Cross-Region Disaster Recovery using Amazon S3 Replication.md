@@ -102,8 +102,14 @@ Upload file to source bucket (us-east-1) → Replication rule + IAM role → Aut
 1. Open **AWS Console → S3 → Create bucket**.
 2. Enter a globally unique bucket name, for example `my-source-bucket-us-east-1`.
 3. Select the Region **US East (N. Virginia) us-east-1**.
+
+<img width="1254" height="216" alt="image" src="https://github.com/user-attachments/assets/c690785b-ef11-47cd-8601-dc2b8c05bed7" />
+
 4. Keep **Block all public access** enabled.
 5. Click **Create bucket**.
+
+<img width="1266" height="466" alt="image" src="https://github.com/user-attachments/assets/126bca10-b667-47a1-bee7-110fb5c51dc8" />
+
 
 ---
 
@@ -113,6 +119,11 @@ Upload file to source bucket (us-east-1) → Replication rule + IAM role → Aut
 2. Go to the **Properties** tab.
 3. Under **Bucket Versioning**, click **Edit**.
 4. Select **Enable** and click **Save changes**.
+
+<img width="1500" height="225" alt="image" src="https://github.com/user-attachments/assets/b115063f-e8e5-4ecd-832a-493f1f03b7d1" />
+
+<img width="1500" height="253" alt="image" src="https://github.com/user-attachments/assets/e5c8cb4a-d2cb-43b8-8d84-075cebd7c221" />
+
 
 ---
 
@@ -125,6 +136,11 @@ Upload file to source bucket (us-east-1) → Replication rule + IAM role → Aut
 5. Open the destination bucket → **Properties → Bucket Versioning → Edit**.
 6. Select **Enable** and click **Save changes**.
 
+<img width="1424" height="333" alt="image" src="https://github.com/user-attachments/assets/88ea483c-27a7-481c-b681-ddef98b68f6a" />
+
+<img width="1381" height="188" alt="image" src="https://github.com/user-attachments/assets/3230d9ad-b800-4908-a367-5c3bfd314710" />
+
+
 > Versioning must be enabled on **both** buckets. The replication rule cannot be created without it.
 
 ---
@@ -132,7 +148,15 @@ Upload file to source bucket (us-east-1) → Replication rule + IAM role → Aut
 ## 7. Step 4: Create the Replication Rule
 
 1. Open the **source bucket** in the S3 console.
+
+<img width="1304" height="268" alt="image" src="https://github.com/user-attachments/assets/a6379f37-253e-4c83-8fde-6b0d90fbf910" />
+
+
 2. Go to the **Management** tab.
+
+<img width="1357" height="325" alt="image" src="https://github.com/user-attachments/assets/0907c5ed-6d40-4050-b9ad-4ffc1ea516b1" />
+
+
 3. Scroll to **Replication rules** and click **Create replication rule**.
 4. Enter a **Replication rule name**, such as:
    ```
@@ -140,12 +164,24 @@ Upload file to source bucket (us-east-1) → Replication rule + IAM role → Aut
    ```
 5. Keep the **Status** set to **Enabled**.
 
+<img width="1266" height="352" alt="image" src="https://github.com/user-attachments/assets/76350dc7-d19b-45be-8674-9412db1bb465" />
+
+
 ---
 
 ## 8. Step 5: Choose Scope and Destination
 
 1. Under **Choose a rule scope**, select **Apply to all objects in the bucket**.
+
+<img width="1368" height="292" alt="image" src="https://github.com/user-attachments/assets/c3c98cf5-9749-49d1-819c-111b66848d23" />
+
+
 2. Under **Destination**, select **Choose a bucket in this account**.
+
+<img width="1444" height="337" alt="image" src="https://github.com/user-attachments/assets/08d0dc0e-b7cf-4ab8-bf98-200e632e20a2" />
+
+
+
 3. Click **Browse S3** and select the destination bucket in `us-west-2` (`my-destination-bucket-us-west-2`).
 
 ---
@@ -153,8 +189,16 @@ Upload file to source bucket (us-east-1) → Replication rule + IAM role → Aut
 ## 9. Step 6: Select the IAM Role and Save the Rule
 
 1. Under **IAM role**, choose **Create new role** (recommended for the demo), or select an existing replication role.
+
+<img width="1417" height="231" alt="image" src="https://github.com/user-attachments/assets/ce60adfd-409e-49a5-b86c-e086309478b5" />
+
+
 2. Leave the other options at their defaults.
 3. Click **Save**.
+
+<img width="1426" height="368" alt="image" src="https://github.com/user-attachments/assets/ad92a9d9-ea9a-4414-b14f-a5a95baf570f" />
+
+
 4. If S3 asks **Replicate existing objects?**, choose **No, do not replicate existing objects** for this demo, then click **Submit**.
 5. Confirm that the rule appears in the list with the status **Enabled**.
 
@@ -173,6 +217,9 @@ Upload file to source bucket (us-east-1) → Replication rule + IAM role → Aut
 aws s3 cp website-backup.tar.gz s3://my-source-bucket-us-east-1/backups/ --region us-east-1
 ```
 
+<img width="1335" height="396" alt="image" src="https://github.com/user-attachments/assets/b4820b46-13ae-4014-a050-942735c9be66" />
+
+
 ---
 
 ## 11. Step 8: Verify the File in the Destination Bucket
@@ -184,6 +231,10 @@ aws s3 cp website-backup.tar.gz s3://my-source-bucket-us-east-1/backups/ --regio
 ```bash
 aws s3 ls s3://my-destination-bucket-us-west-2/ --recursive --region us-west-2
 ```
+
+<img width="1421" height="543" alt="image" src="https://github.com/user-attachments/assets/868d5ffc-ea4e-4c76-8b05-dd03735f4341" />
+
+
 
 **Check the replication status of the file:**
 ```bash
