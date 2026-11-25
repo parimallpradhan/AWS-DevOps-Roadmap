@@ -95,7 +95,7 @@ Recommended: AWS CLI Version 2
 
 AWS provides AWS CLI Version 2 for Windows, Linux and macOS. We will use Version 2.&#x20;
 
-[image](https://www.google.com/s2/favicons?domain=https://docs.aws.amazon.com\&sz=32)
+https://www.google.com/s2/favicons?domain=https://docs.aws.amazon.com\&sz=32
 
 AWS Command Line Interface+1
 
@@ -344,5 +344,520 @@ Yes. We can execute AWS CLI commands inside Jenkins pipelines to automate tasks 
 - [Introduction to AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-welcome.html?utm_source=chatgpt.com)
 - [AWS CLI Installation Guide](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html?utm_source=chatgpt.com)
 - [AWS CLI Configuration Guide](https://docs.aws.amazon.com/us_en/cli/latest/userguide/getting-started-quickstart.html?utm_source=chatgpt.com)
+
+
+# **AWS CLI Commands Cheat Sheet – DevOps Engineer**
+
+Below is a practical AWS CLI command reference covering EC2, S3, IAM, RDS, VPC, EBS, CloudWatch, Lambda and other important AWS services.
+
+These commands are useful for:
+
+- AWS beginners learning command-line operations.
+- DevOps engineers managing AWS infrastructure.
+- Automating AWS tasks using Shell Scripts and Jenkins pipelines.
+- Interview preparation and hands-on practice.
+
+**Before executing commands**, make sure AWS CLI is installed and configured.
+
+```
+aws --version
+aws configure
+aws sts get-caller-identity
+```
+
+
+
+# **1. EC2 – Elastic Compute Cloud**
+
+[【Amazon EC2】初心者が覚えるべき基本的なコマンドまとめ（Linux編） | 副業社長](https://images.openai.com/static-rsc-4/3ffQf0F3drG1C0whK_uawFGqjUH5ygWnrAZIlkd3HZoByinDBXa9BcIoLRgHIjhCmicdyHohopb9MGBKS2Tc-OzvYyK-0coXnxE8fm57QGXpxvYnCGHTRwS_1VS8cyZ3vrpPmWNXG-D-3XTVMAOPRivTbnTNb_f2H7pvi0Ht91U?purpose=inline)
+
+EC2 is used to create and manage virtual servers in AWS.
+
+| Requirement                     | AWS CLI command                                                                                                                                                   |
+| ------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| List EC2 instances              | `aws ec2 describe-instances`                                                                                                                                      |
+| List instances in Mumbai        | `aws ec2 describe-instances --region ap-south-1`                                                                                                                  |
+| Launch EC2 instance             | `aws ec2 run-instances --image-id ami-xxxxxxxx --instance-type t2.micro --key-name my-key --security-group-ids sg-xxxxxxxx --subnet-id subnet-xxxxxxxx --count 1` |
+| Start EC2 instance              | `aws ec2 start-instances --instance-ids i-1234567890abcdef0`                                                                                                      |
+| Stop EC2 instance               | `aws ec2 stop-instances --instance-ids i-1234567890abcdef0`                                                                                                       |
+| Reboot EC2 instance             | `aws ec2 reboot-instances --instance-ids i-1234567890abcdef0`                                                                                                     |
+| Terminate EC2 instance          | `aws ec2 terminate-instances --instance-ids i-1234567890abcdef0`                                                                                                  |
+| Get EC2 instance details        | `aws ec2 describe-instances --instance-ids i-1234567890abcdef0`                                                                                                   |
+| List EC2 instance types         | `aws ec2 describe-instance-types`                                                                                                                                 |
+| List AMIs owned by your account | `aws ec2 describe-images --owners self`                                                                                                                           |
+| Create AMI                      | `aws ec2 create-image --instance-id i-1234567890abcdef0 --name ecommerce-server-ami`                                                                              |
+
+**Real-time example:** The development team wants to stop a DEV EC2 instance after office hours to reduce infrastructure costs.
+
+```
+aws ec2 stop-instances --instance-ids i-1234567890abcdef0
+```
+
+# **2. S3 – Simple Storage Service**
+
+[¿Qué es Amazon Simple Storage Service o Amazon S3?](https://images.openai.com/static-rsc-4/51eOWzJalw2yq_dBMfBxGEGX7-PbAjDQ4mjuwV0FTMjVHoW74eNKBP-AUcHYzVtBu2ArveGRaToy5HGNVghw16DkMlSRTHG6EXhTGKCaIAQcN2UP9TubvKMwGtChLeJENwUbBai-KAqOCj0vvruMcHHO83aWk7q_spx-TaESP1g?purpose=inline)
+
+S3 is used to store images, videos, documents, application backups and static website files.
+
+| Requirement               | AWS CLI command                                                                                     |
+| ------------------------- | --------------------------------------------------------------------------------------------------- |
+| List all buckets          | `aws s3 ls`                                                                                         |
+| Create bucket (Mumbai)    | `aws s3 mb s3://my-demo-bucket --region ap-south-1`                                                 |
+| List bucket contents      | `aws s3 ls s3://my-demo-bucket`                                                                     |
+| Upload file               | `aws s3 cp index.html s3://my-demo-bucket/`                                                         |
+| Upload folder             | `aws s3 cp ./website s3://my-demo-bucket/ --recursive`                                              |
+| Download file             | `aws s3 cp s3://my-demo-bucket/index.html .`                                                        |
+| Download complete bucket  | `aws s3 cp s3://my-demo-bucket ./backup --recursive`                                                |
+| Copy object               | `aws s3 cp s3://my-demo-bucket/index.html s3://my-backup-bucket/`                                   |
+| Sync local folder to S3   | `aws s3 sync ./website s3://my-demo-bucket/`                                                        |
+| Sync S3 to local folder   | `aws s3 sync s3://my-demo-bucket/ ./website`                                                        |
+| Delete an object          | `aws s3 rm s3://my-demo-bucket/index.html`                                                          |
+| Delete all bucket objects | `aws s3 rm s3://my-demo-bucket --recursive`                                                         |
+| Remove empty bucket       | `aws s3 rb s3://my-demo-bucket`                                                                     |
+| Enable versioning         | `aws s3api put-bucket-versioning --bucket my-demo-bucket --versioning-configuration Status=Enabled` |
+| Check versioning          | `aws s3api get-bucket-versioning --bucket my-demo-bucket`                                           |
+
+**Real-time example:** The e-commerce development team wants to upload product images to S3.
+
+```
+aws s3 cp mobile.jpg s3://my-demo-bucket/product-images/
+```
+
+# **3. IAM – Identity and Access Management**
+
+[Security, Identity & Compliance  | AWS Architecture Center](https://images.openai.com/static-rsc-4/yW4y9F9z2I0-cHTZhSJ6ljYOvdyruAYQGQyRyQo3y8A9C86Yk_mPL-LxWsrWekV5Jx9ZC1_YmSLYtYOcMj-xbMoD48r4bud4c_G4m-8I3-alhYtXAlltXcG61i_yhkEAnF3Q15V0sFk9R1pMP-KcSaKkPJpfZNDMx5PiC1YxdO4?purpose=inline)
+
+IAM manages users, groups, roles and permissions in AWS.
+
+| Requirement                       | AWS CLI command                                                                                                   |
+| --------------------------------- | ----------------------------------------------------------------------------------------------------------------- |
+| List IAM users                    | `aws iam list-users`                                                                                              |
+| Create IAM user                   | `aws iam create-user --user-name developer`                                                                       |
+| Get user details                  | `aws iam get-user --user-name developer`                                                                          |
+| Delete IAM user                   | `aws iam delete-user --user-name developer`                                                                       |
+| Create IAM group                  | `aws iam create-group --group-name Developers`                                                                    |
+| List IAM groups                   | `aws iam list-groups`                                                                                             |
+| Add user to group                 | `aws iam add-user-to-group --user-name developer --group-name Developers`                                         |
+| List group users                  | `aws iam get-group --group-name Developers`                                                                       |
+| Create IAM role                   | `aws iam create-role --role-name EC2-S3-Role --assume-role-policy-document file://trust-policy.json`              |
+| List IAM roles                    | `aws iam list-roles`                                                                                              |
+| Attach AWS managed policy to user | `aws iam attach-user-policy --user-name developer --policy-arn arn:aws:iam::aws:policy/AmazonS3ReadOnlyAccess`    |
+| Attach policy to group            | `aws iam attach-group-policy --group-name Developers --policy-arn arn:aws:iam::aws:policy/AmazonS3ReadOnlyAccess` |
+| List user policies                | `aws iam list-attached-user-policies --user-name developer`                                                       |
+| Detach policy from user           | `aws iam detach-user-policy --user-name developer --policy-arn arn:aws:iam::aws:policy/AmazonS3ReadOnlyAccess`    |
+
+**Real-time example:** A developer needs read-only access to S3 buckets.
+
+```
+aws iam attach-user-policy \
+--user-name developer \
+--policy-arn arn:aws:iam::aws:policy/AmazonS3ReadOnlyAccess
+```
+
+# **4. RDS – Relational Database Service**
+
+[AWS RDS Logo Vector Download | Logowik](https://images.openai.com/static-rsc-4/YeBfzBYLpmBa4rFECPn6dIaYm1pe5V5uDk30jacz6MchZIvp30GgmTZ9jsZoxNdNCbrbe2NQkhGnxIAJ70tkKtiIcnrTMV1wmC1JkmO1JcRaLTjQ-ER-XKi-5vVR_Y0TNUI1nArWF62X9MveUIuo9kpXhSypuLTJb1XXgc_cp6Q?purpose=inline)
+
+RDS is used to create and manage relational databases such as MySQL, PostgreSQL and MariaDB.
+
+| Requirement           | AWS CLI command                                                                                                                                                                                |
+| --------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| List RDS instances    | `aws rds describe-db-instances`                                                                                                                                                                |
+| Create MySQL database | `aws rds create-db-instance --db-instance-identifier ecommerce-db --db-instance-class db.t3.micro --engine mysql --master-username admin --manage-master-user-password --allocated-storage 20` |
+| Get DB details        | `aws rds describe-db-instances --db-instance-identifier ecommerce-db`                                                                                                                          |
+| Start database        | `aws rds start-db-instance --db-instance-identifier ecommerce-db`                                                                                                                              |
+| Stop database         | `aws rds stop-db-instance --db-instance-identifier ecommerce-db`                                                                                                                               |
+| Reboot database       | `aws rds reboot-db-instance --db-instance-identifier ecommerce-db`                                                                                                                             |
+| Delete database       | `aws rds delete-db-instance --db-instance-identifier ecommerce-db --skip-final-snapshot`                                                                                                       |
+| List DB snapshots     | `aws rds describe-db-snapshots`                                                                                                                                                                |
+| Create DB snapshot    | `aws rds create-db-snapshot --db-instance-identifier ecommerce-db --db-snapshot-identifier ecommerce-db-backup`                                                                                |
+
+**Real-time example:** The DevOps engineer needs to take a backup before applying database changes.
+
+```
+aws rds create-db-snapshot \
+--db-instance-identifier ecommerce-db \
+--db-snapshot-identifier ecommerce-db-backup
+```
+
+# **5. EBS – Elastic Block Store**
+
+[Cách khắc phục vấn đề performance khi khôi phục EBS volume từ snapshot | CloudMentorPro Blog](https://images.openai.com/static-rsc-4/wFIou5a8xDybhv5YdIqw8yhzVN_H6ElsFwZI2fWkGxZQGG4TmLLPQgPPzXv68nfSRGog64k-NEPVZGwsxmcRmH-piSAY7s5ox9F-AHWlVK7lJr7zmZHrZhHzUwgiIuKdl84_bByloUBAcid5_Xx5o61BULckVhpCxCtdiPeIC4M?purpose=inline)
+
+EBS provides block storage volumes for EC2 instances.
+
+| Requirement          | AWS CLI command                                                                             |
+| -------------------- | ------------------------------------------------------------------------------------------- |
+| List EBS volumes     | `aws ec2 describe-volumes`                                                                  |
+| Create EBS volume    | `aws ec2 create-volume --availability-zone ap-south-1a --size 10 --volume-type gp3`         |
+| Attach volume to EC2 | `aws ec2 attach-volume --volume-id vol-xxxxxxxx --instance-id i-xxxxxxxx --device /dev/sdf` |
+| Detach volume        | `aws ec2 detach-volume --volume-id vol-xxxxxxxx`                                            |
+| Delete volume        | `aws ec2 delete-volume --volume-id vol-xxxxxxxx`                                            |
+| Create snapshot      | `aws ec2 create-snapshot --volume-id vol-xxxxxxxx --description "Ecommerce backup"`         |
+| List snapshots       | `aws ec2 describe-snapshots --owner-ids self`                                               |
+| Delete snapshot      | `aws ec2 delete-snapshot --snapshot-id snap-xxxxxxxx`                                       |
+
+**Real-time example:** The e-commerce application server needs additional storage for application logs.
+
+```
+aws ec2 create-volume \
+--availability-zone ap-south-1a \
+--size 20 \
+--volume-type gp3
+```
+
+# **6. VPC – Virtual Private Cloud**
+
+[File:AWS Simple Icons Virtual Private Cloud.svg - Wikimedia Commons](https://images.openai.com/static-rsc-4/fA-FIO3BaQnjvT9q_CrRVNLqEdnVAJdLHnaEU_KJnBlAFerDii0p4BWXkVnPe3U8e9S-B3Twq4cz_ltqKSuTA4ropYTRADJYchEtsXgsn4nGT6hx_AzJLnBBjiWJYhSFG1t7kRo5aJ0mpYeThGjEskNKtYuFFXgDRC846nQDIdQ?purpose=inline)
+
+VPC provides an isolated virtual network in AWS.
+
+| Requirement             | AWS CLI command                                                                                                          |
+| ----------------------- | ------------------------------------------------------------------------------------------------------------------------ |
+| List VPCs               | `aws ec2 describe-vpcs`                                                                                                  |
+| Create VPC              | `aws ec2 create-vpc --cidr-block 10.0.0.0/16`                                                                            |
+| Get VPC details         | `aws ec2 describe-vpcs --vpc-ids vpc-xxxxxxxx`                                                                           |
+| Create subnet           | `aws ec2 create-subnet --vpc-id vpc-xxxxxxxx --cidr-block 10.0.1.0/24 --availability-zone ap-south-1a`                   |
+| List subnets            | `aws ec2 describe-subnets`                                                                                               |
+| Create Internet Gateway | `aws ec2 create-internet-gateway`                                                                                        |
+| List Internet Gateways  | `aws ec2 describe-internet-gateways`                                                                                     |
+| Attach Internet Gateway | `aws ec2 attach-internet-gateway --internet-gateway-id igw-xxxxxxxx --vpc-id vpc-xxxxxxxx`                               |
+| Create route table      | `aws ec2 create-route-table --vpc-id vpc-xxxxxxxx`                                                                       |
+| List route tables       | `aws ec2 describe-route-tables`                                                                                          |
+| Create security group   | `aws ec2 create-security-group --group-name ecommerce-sg --description "Ecommerce security group" --vpc-id vpc-xxxxxxxx` |
+| List security groups    | `aws ec2 describe-security-groups`                                                                                       |
+| Allow HTTP traffic      | `aws ec2 authorize-security-group-ingress --group-id sg-xxxxxxxx --protocol tcp --port 80 --cidr 0.0.0.0/0`              |
+
+**Real-time example:** The e-commerce website needs to allow customers to access the application over HTTP port 80.
+
+```
+aws ec2 authorize-security-group-ingress \
+--group-id sg-xxxxxxxx \
+--protocol tcp \
+--port 80 \
+--cidr 0.0.0.0/0
+```
+
+# **7. ELB – Elastic Load Balancing**
+
+[AWS Builder Center](https://images.openai.com/static-rsc-4/sHUlJDdS0P7CNv5HDRdbItDDW_1i-nqhuR-hfZxH8NZWnITk1FM_gVt3epAWi7blkerghgCrVsrg0Q-4mYyb1HsW1kPRWqYqddSFb0FpwCQD_pLiCmZqMt6WQa7NqJc4Fy8yolBkWgcBctmrCFvhMbnWJlQoWCG6EZXYFMps664?purpose=inline)
+
+ELB distributes incoming application traffic across multiple EC2 instances.
+
+| Requirement                      | AWS CLI command                                                                                                                                                 |
+| -------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| List load balancers              | `aws elbv2 describe-load-balancers`                                                                                                                             |
+| Create Application Load Balancer | `aws elbv2 create-load-balancer --name ecommerce-alb --subnets subnet-aaa subnet-bbb --security-groups sg-xxxxxxxx --scheme internet-facing --type application` |
+| List target groups               | `aws elbv2 describe-target-groups`                                                                                                                              |
+| Create target group              | `aws elbv2 create-target-group --name ecommerce-tg --protocol HTTP --port 80 --vpc-id vpc-xxxxxxxx`                                                             |
+| Register EC2 target              | `aws elbv2 register-targets --target-group-arn TARGET_GROUP_ARN --targets Id=i-xxxxxxxx`                                                                        |
+| Check target health              | `aws elbv2 describe-target-health --target-group-arn TARGET_GROUP_ARN`                                                                                          |
+| List listeners                   | `aws elbv2 describe-listeners --load-balancer-arn ALB_ARN`                                                                                                      |
+
+**Real-time example:** Register two EC2 instances with the e-commerce application's target group.
+
+```
+aws elbv2 register-targets \
+--target-group-arn TARGET_GROUP_ARN \
+--targets Id=i-11111111111111111 Id=i-22222222222222222
+```
+
+# **8. Auto Scaling**
+
+[Amazon EC2 Auto Scaling のCPU使用率に基づくスケーリングをAmazon CloudWatchから確認してみた | DevelopersIO](https://images.openai.com/static-rsc-4/EcD6huLzBtiOOAf3i-nVv1ituqbQNWAek0ue5kMkhmQ4CCVhpxi-7dhCofkKpfX__ge4aH1PbhXrd3SC7Ny9E10C79W-9lrvTA1iYbzaZja_tvFbyrur1OGD129toO-U9XQOO4AmCkqpaUhDKJGUH2Q2qd_U4kv79Yz4Nvs49S4?purpose=inline)
+
+Auto Scaling automatically increases or decreases EC2 instances based on demand and scaling policies.
+
+| Requirement               | AWS CLI command                                                                                                                                                                                                                         |
+| ------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| List Auto Scaling groups  | `aws autoscaling describe-auto-scaling-groups`                                                                                                                                                                                          |
+| Create Auto Scaling group | `aws autoscaling create-auto-scaling-group --auto-scaling-group-name ecommerce-asg --launch-template LaunchTemplateId=lt-xxxxxxxx,Version=1 --min-size 1 --max-size 3 --desired-capacity 2 --vpc-zone-identifier subnet-aaa,subnet-bbb` |
+| Increase desired capacity | `aws autoscaling set-desired-capacity --auto-scaling-group-name ecommerce-asg --desired-capacity 3`                                                                                                                                     |
+| Decrease desired capacity | `aws autoscaling set-desired-capacity --auto-scaling-group-name ecommerce-asg --desired-capacity 1`                                                                                                                                     |
+| Suspend scaling processes | `aws autoscaling suspend-processes --auto-scaling-group-name ecommerce-asg`                                                                                                                                                             |
+| Resume scaling processes  | `aws autoscaling resume-processes --auto-scaling-group-name ecommerce-asg`                                                                                                                                                              |
+| Delete Auto Scaling group | `aws autoscaling delete-auto-scaling-group --auto-scaling-group-name ecommerce-asg --force-delete`                                                                                                                                      |
+
+**Real-time example:** During a sale, customer traffic increases. The DevOps engineer increases the desired EC2 count from 2 to 3.
+
+```
+aws autoscaling set-desired-capacity \
+--auto-scaling-group-name ecommerce-asg \
+--desired-capacity 3
+```
+
+# **9. CloudWatch**
+
+[CloudWatch RUMでサンプルアプリケーションをモニタリングしてみた | DevelopersIO](https://images.openai.com/static-rsc-4/SREZ-lNqfxMxb3ianAokp4FjPZ9y-Kcw0ylfcgtznG43PJ7t59ytcuABc8x2j1PTrwBMAQeZDqcnAyVSSMCCJTFu1UX285X6lhncoxJVKwtV_0wZbhm-ZH_tjiP3hrF1T868M_93tO2dVDfwnAivz3ZLK8QDGhLXaoEYD_WqALk?purpose=inline)
+
+CloudWatch is used to monitor AWS resources, metrics, logs and alarms.
+
+| Requirement             | AWS CLI command                                                                                                                                                                                                                           |
+| ----------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| List CloudWatch alarms  | `aws cloudwatch describe-alarms`                                                                                                                                                                                                          |
+| Get EC2 CPU utilization | `aws cloudwatch get-metric-statistics --namespace AWS/EC2 --metric-name CPUUtilization --dimensions Name=InstanceId,Value=i-xxxxxxxx --start-time 2026-11-24T00:00:00Z --end-time 2026-11-25T00:00:00Z --period 300 --statistics Average` |
+| Create log group        | `aws logs create-log-group --log-group-name /ecommerce/application`                                                                                                                                                                       |
+| List log groups         | `aws logs describe-log-groups`                                                                                                                                                                                                            |
+| List log streams        | `aws logs describe-log-streams --log-group-name /ecommerce/application`                                                                                                                                                                   |
+| Get log events          | `aws logs get-log-events --log-group-name /ecommerce/application --log-stream-name application-stream`                                                                                                                                    |
+| Delete log group        | `aws logs delete-log-group --log-group-name /ecommerce/application`                                                                                                                                                                       |
+
+**Real-time example:** The DevOps team wants to monitor EC2 CPU utilization to troubleshoot high server usage.
+
+```
+aws cloudwatch get-metric-statistics \
+--namespace AWS/EC2 \
+--metric-name CPUUtilization \
+--dimensions Name=InstanceId,Value=i-xxxxxxxx \
+--start-time 2026-11-24T00:00:00Z \
+--end-time 2026-11-25T00:00:00Z \
+--period 300 \
+--statistics Average
+```
+
+# **10. Lambda**
+
+[AWS Lambda – expandAPIs](https://images.openai.com/static-rsc-4/vZxZ9IVZ6aGW7_0M7I7hgnly8JuAUbYwfVHoNfiNgYRvkadKGBiH3ppEZq8ciPQ7TDDsRCVFgkU_xrCfcp7PInjwUEfIECjdVO0vs0ohV9cq0cs0OwoUoORsZpwIlUPrEDfYTtVCJp0eEEM2lpHYHxEV3aU7YISfc3J_-KywC5w?purpose=inline)
+
+Lambda allows us to execute code without managing servers.
+
+| Requirement            | AWS CLI command                                                                                                                                                                                                 |
+| ---------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| List Lambda functions  | `aws lambda list-functions`                                                                                                                                                                                     |
+| Get function details   | `aws lambda get-function --function-name ecommerce-function`                                                                                                                                                    |
+| Create Lambda function | `aws lambda create-function --function-name ecommerce-function --runtime python3.12 --role arn:aws:iam::123456789012:role/lambda-role --handler lambda_function.lambda_handler --zip-file fileb://function.zip` |
+| Invoke Lambda          | `aws lambda invoke --function-name ecommerce-function response.json`                                                                                                                                            |
+| Update Lambda code     | `aws lambda update-function-code --function-name ecommerce-function --zip-file fileb://function.zip`                                                                                                            |
+| Delete Lambda          | `aws lambda delete-function --function-name ecommerce-function`                                                                                                                                                 |
+
+**Real-time example:** Whenever a customer uploads a product image to S3, a Lambda function can automatically process the image.
+
+# **11. Route 53**
+
+[Amazon Route 53 | Amazon Web Services ブログ](https://images.openai.com/static-rsc-4/jaC4envz0ON5V0fZJwnuCHe3rGz0EdRwewvK1BAQYz8XAALhl3B9wiv-GTJdQMNnNqLLiHuGBHNMgFnSXVNiECxPc9lDqaw2YmpXC-z14C61QysnjmWno-w1RMQb96n4ozI12YUDfTTz_OocLU2eHQD9NKGQmFeHBIPy5-qXrq0?purpose=inline)
+
+Route 53 is used for DNS management and domain routing.
+
+| Requirement             | AWS CLI command                                                                                                |
+| ----------------------- | -------------------------------------------------------------------------------------------------------------- |
+| List hosted zones       | `aws route53 list-hosted-zones`                                                                                |
+| Get hosted zone details | `aws route53 get-hosted-zone --id Z123456789`                                                                  |
+| List DNS records        | `aws route53 list-resource-record-sets --hosted-zone-id Z123456789`                                            |
+| Create DNS record       | `aws route53 change-resource-record-sets --hosted-zone-id Z123456789 --change-batch file://dns-record.json`    |
+| Delete DNS record       | `aws route53 change-resource-record-sets --hosted-zone-id Z123456789 --change-batch file://delete-record.json` |
+
+**Real-time example:** The company wants to point `www.techpari.in` to its Application Load Balancer using an Alias record.
+
+# **12. DynamoDB**
+
+[Amazon DynamoDB: Essential Concepts for Scalable Applications | by Rahul | Medium](https://images.openai.com/static-rsc-4/pTIfYRPnV5nYYFj3oaO_jHSu66mLhazNrqxO_VJ_lM6-v5GXLCoxW7nqJsxIm9_tiausWGdPvPtBDNrqG11uGV0FSu-KhlMUTMxbIHCQBMOozzEUOIkyrwDEaew0OKgrwwiwE3N5d8fRFHTBYIMZdYiCI8jCRzW5xlZD3q-9pUQ?purpose=inline)
+
+DynamoDB is a fully managed NoSQL database.
+
+| Requirement    | AWS CLI command                                                                                                                                                                              |
+| -------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| List tables    | `aws dynamodb list-tables`                                                                                                                                                                   |
+| Describe table | `aws dynamodb describe-table --table-name Orders`                                                                                                                                            |
+| Create table   | `aws dynamodb create-table --table-name Orders --attribute-definitions AttributeName=OrderId,AttributeType=S --key-schema AttributeName=OrderId,KeyType=HASH --billing-mode PAY_PER_REQUEST` |
+| Insert item    | `aws dynamodb put-item --table-name Orders --item '{"OrderId":{"S":"101"},"CustomerName":{"S":"Rahul"}}'`                                                                                    |
+| Get item       | `aws dynamodb get-item --table-name Orders --key '{"OrderId":{"S":"101"}}'`                                                                                                                  |
+| Scan table     | `aws dynamodb scan --table-name Orders`                                                                                                                                                      |
+| Delete item    | `aws dynamodb delete-item --table-name Orders --key '{"OrderId":{"S":"101"}}'`                                                                                                               |
+| Delete table   | `aws dynamodb delete-table --table-name Orders`                                                                                                                                              |
+
+**Real-time example:** The e-commerce application stores customer order details in a DynamoDB table.
+
+# **13. SQS – Simple Queue Service**
+
+[Implementing AWS SQS Lambda Connection Simplified 101 | Hevo](https://images.openai.com/static-rsc-4/Eok_etnNcVhSNaTPr_CZyX3baEhEjlx4MwYgAm20bKcgwv-yywNNoSAIhC_9UpZ9LkPdObam8eZ0QsRCUhr6R-Szd_wnvioARDSGKJzVEHCJ-IhPsEJ5unfU0DgITUXnMWfuF2x4aGKbPLZ7A0UmZNnS_jo7Z6P50JFo5t0EhKQ?purpose=inline)
+
+SQS is used to exchange messages between distributed application components.
+
+| Requirement     | AWS CLI command                                                                  |
+| --------------- | -------------------------------------------------------------------------------- |
+| List queues     | `aws sqs list-queues`                                                            |
+| Create queue    | `aws sqs create-queue --queue-name ecommerce-orders`                             |
+| Get queue URL   | `aws sqs get-queue-url --queue-name ecommerce-orders`                            |
+| Send message    | `aws sqs send-message --queue-url QUEUE_URL --message-body "New Order Received"` |
+| Receive message | `aws sqs receive-message --queue-url QUEUE_URL`                                  |
+| Delete message  | `aws sqs delete-message --queue-url QUEUE_URL --receipt-handle RECEIPT_HANDLE`   |
+| Delete queue    | `aws sqs delete-queue --queue-url QUEUE_URL`                                     |
+
+**Real-time example:** When a customer places an order, the application sends an order-processing message to SQS.
+
+# **14. SNS – Simple Notification Service**
+
+[AWSの主要サービス – AWSの代表的なサービスとその活用例をわかりやすく解説 | 初めてのAWS | ネクスト株式会社](https://images.openai.com/static-rsc-4/ZwNIx0TxYF57R29kh6E0Gk0i9L2ymkm5WX_Jl92El9GA_9KCq0ikm9zJQxAaZqg7mAoBJETsebGrP3ZXWANHkNtipze3AMmcZ77hnhL7foSSSnA_AD2wK7auWoFizA4LZlZZPPthTfBaiqLXOOD1hsUJntuUWEHghmC5glI1G8M?purpose=inline)
+
+SNS is used to send notifications through email, SMS and other supported endpoints.
+
+| Requirement        | AWS CLI command                                                                                        |
+| ------------------ | ------------------------------------------------------------------------------------------------------ |
+| List SNS topics    | `aws sns list-topics`                                                                                  |
+| Create topic       | `aws sns create-topic --name ecommerce-alerts`                                                         |
+| Subscribe email    | `aws sns subscribe --topic-arn TOPIC_ARN --protocol email --notification-endpoint student@example.com` |
+| Publish message    | `aws sns publish --topic-arn TOPIC_ARN --message "EC2 CPU utilization is high"`                        |
+| List subscriptions | `aws sns list-subscriptions`                                                                           |
+| Delete topic       | `aws sns delete-topic --topic-arn TOPIC_ARN`                                                           |
+
+**Real-time example:** The DevOps team wants to receive an email notification when an application server experiences an issue.
+
+# **15. CloudTrail**
+
+[AWS CloudTrail network activity events for VPC endpoints now generally available | AWS News Blog](https://images.openai.com/static-rsc-4/zwYwru2nY05nXzfTPiT4CzAXTekZOK7PYiVJHt_Phn9sP8W6lhPi2PMS8t2CRqYXV-TtSwCCR86mBYfd9k6fNqlUaQzMFLuibWiJ0K3vWR9e2YqtJoY6t25e1Lr3FYIqTlVQ6flffQzIW8HrYGQZeVfHcVaG5iRUM803ucwipA4?purpose=inline)
+
+CloudTrail records account activity and API events for auditing.
+
+| Requirement        | AWS CLI command                                                                       |
+| ------------------ | ------------------------------------------------------------------------------------- |
+| List trails        | `aws cloudtrail describe-trails`                                                      |
+| List recent events | `aws cloudtrail lookup-events`                                                        |
+| Get trail status   | `aws cloudtrail get-trail-status --name my-trail`                                     |
+| Create trail       | `aws cloudtrail create-trail --name ecommerce-trail --s3-bucket-name my-audit-bucket` |
+| Start logging      | `aws cloudtrail start-logging --name ecommerce-trail`                                 |
+| Stop logging       | `aws cloudtrail stop-logging --name ecommerce-trail`                                  |
+
+**Real-time example:** The security team wants to identify who terminated an EC2 instance.
+
+```
+aws cloudtrail lookup-events \
+--lookup-attributes AttributeKey=EventName,AttributeValue=TerminateInstances
+```
+
+# **16. ECR – Elastic Container Registry**
+
+[Amazon ECR 使用 - Simple Blog](https://images.openai.com/static-rsc-4/l08bzan1H7WUuShMu2vFig9ap2eMjNYXAtfS0cdYn0MWwwNZZBfsFcj3iYYJKwkdy5MklVq0ozWKQZOc4zvbbG81w8OigmAtYqS2ZiDfKPJUb94mmoYeEacSg4QhNoMCmEPTechichAFmqWPdqBe1zNBeGPQmNqLYY_AjwDnkuM?purpose=inline)
+
+ECR is used to store Docker container images.
+
+| Requirement       | AWS CLI command                                                                                                                                 |
+| ----------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- |
+| List repositories | `aws ecr describe-repositories`                                                                                                                 |
+| Create repository | `aws ecr create-repository --repository-name ecommerce-app`                                                                                     |
+| Login to ECR      | `aws ecr get-login-password --region ap-south-1 \\| docker login --username AWS --password-stdin 123456789012.dkr.ecr.ap-south-1.amazonaws.com` |
+| List images       | `aws ecr list-images --repository-name ecommerce-app`                                                                                           |
+| Describe images   | `aws ecr describe-images --repository-name ecommerce-app`                                                                                       |
+| Delete image      | `aws ecr batch-delete-image --repository-name ecommerce-app --image-ids imageTag=v1`                                                            |
+| Delete repository | `aws ecr delete-repository --repository-name ecommerce-app --force`                                                                             |
+
+**Real-time example:** The DevOps engineer builds a Docker image using Jenkins and pushes it to AWS ECR.
+
+```
+docker build -t ecommerce-app:v1 .
+```
+
+```
+docker tag ecommerce-app:v1 \
+123456789012.dkr.ecr.ap-south-1.amazonaws.com/ecommerce-app:v1
+```
+
+```
+docker push \
+123456789012.dkr.ecr.ap-south-1.amazonaws.com/ecommerce-app:v1
+```
+
+# **17. Secrets Manager**
+
+[GitHub Actions を利用して AWS SAM のデプロイ環境をセットアップしてみた | DevelopersIO](https://images.openai.com/static-rsc-4/9WwvqWRVTYYCCf_VpSDK9ZGAB83B13sIoHZQpNcN3fgzFPZjLw8JNHYg5llllIk6q31Q8FVCErDw61bTIvr-MVfQHxiwA-azrcuBAoMDcTI8ti1x3_eg0YOOvZMMg47t38xYWPBLFaTPqpUJT03XbW4tFBGRI6-0l6yksxs709A?purpose=inline)
+
+Secrets Manager stores sensitive information such as database passwords and API credentials.
+
+| Requirement     | AWS CLI command                                                                                                  |
+| --------------- | ---------------------------------------------------------------------------------------------------------------- |
+| List secrets    | `aws secretsmanager list-secrets`                                                                                |
+| Create secret   | `aws secretsmanager create-secret --name ecommerce/db-password --secret-string 'MyExamplePassword123!'`          |
+| Retrieve secret | `aws secretsmanager get-secret-value --secret-id ecommerce/db-password`                                          |
+| Update secret   | `aws secretsmanager put-secret-value --secret-id ecommerce/db-password --secret-string 'NewExamplePassword456!'` |
+| Delete secret   | `aws secretsmanager delete-secret --secret-id ecommerce/db-password`                                             |
+
+**Real-time example:** An application needs the database password without hardcoding it in the application source code.
+
+# **18. Additional useful AWS CLI commands**
+
+These commands are useful across almost all AWS services.
+
+| Requirement                  | Command                                                                        |
+| ---------------------------- | ------------------------------------------------------------------------------ |
+| Check AWS identity           | `aws sts get-caller-identity`                                                  |
+| List configured profiles     | `aws configure list-profiles`                                                  |
+| Check current configuration  | `aws configure list`                                                           |
+| Use a particular profile     | `aws s3 ls --profile dev`                                                      |
+| Change default region        | `aws configure set region ap-south-1`                                          |
+| Display output as table      | `aws ec2 describe-instances --output table`                                    |
+| Display output as JSON       | `aws ec2 describe-instances --output json`                                     |
+| Filter running EC2 instances | `aws ec2 describe-instances --filters Name=instance-state-name,Values=running` |
+| Get AWS CLI help             | `aws help`                                                                     |
+| Get EC2 command help         | `aws ec2 help`                                                                 |
+
+## **19. Important AWS CLI options**
+
+| Option      | Purpose                    | Example                                             |
+| ----------- | -------------------------- | --------------------------------------------------- |
+| `--region`  | Specify AWS region         | `--region ap-south-1`                               |
+| `--profile` | Use a specific AWS profile | `--profile dev`                                     |
+| `--output`  | Specify output format      | `--output table`                                    |
+| `--query`   | Filter command output      | `--query 'Reservations[*].Instances[*].InstanceId'` |
+| `--filters` | Filter AWS resources       | `--filters Name=instance-state-name,Values=running` |
+
+## **20. Practice assignments for students**
+
+Here are some practical assignments you can give your students after teaching AWS CLI.
+
+**Assignment 1 – EC2 Management**
+
+Beginner
+
+- List all EC2 instances.
+- Start an EC2 instance.
+- Stop an EC2 instance.
+- Display running instances only.
+
+  **Assignment 2 – S3 Management**
+
+Beginner
+
+- Create an S3 bucket.
+- Upload an HTML file.
+- List bucket objects.
+- Download the HTML file.
+- Enable bucket versioning.
+
+  **Assignment 3 – IAM Management**
+
+Intermediate
+
+- Create an IAM user.
+- Create a Developers group.
+- Add the user to the group.
+- Attach S3 read-only permissions.
+
+  **Assignment 4 – RDS Management**
+
+Intermediate
+
+- List RDS databases.
+- Get database details.
+- Create a database snapshot.
+- Identify the database endpoint.
+
+  **Assignment 5 – DevOps Automation**
+
+Advanced
+
+- Build a Docker image.
+- Push the image to ECR.
+- Deploy the application on EC2.
+- Upload application artifacts to S3.
+- Monitor EC2 using CloudWatch.
+
+## **Note**
+
+1. Replace sample IDs such as `i-xxxxxxxx`, `sg-xxxxxxxx` and `vpc-xxxxxxxx` with actual AWS resource IDs.
+2. Commands that create, stop, terminate or delete resources can have cost or availability consequences. Verify before executing.
+3. Never commit AWS access keys or secrets to GitHub.
+4. Prefer IAM roles, IAM Identity Center and temporary credentials over long-lived access keys.
+5. Some commands require additional configuration, permissions, resource dependencies or JSON input files.
+
+
 
 
