@@ -107,7 +107,6 @@ Enable S3 Versioning.
 
 # **3. S3 Replication**
 
-Topic 2 from your image
 
 ## **What is S3 Replication?**
 
@@ -136,6 +135,8 @@ For disaster recovery, it wants to maintain another copy of important files in S
 
 **Architecture**
 
+<img width="1536" height="1024" alt="image" src="https://github.com/user-attachments/assets/853c9e82-6ce8-46df-990e-d09f8d586bb3" />
+
 
 ### **B. Same-Region Replication (SRR)**
 
@@ -151,7 +152,11 @@ SRR copies objects between two S3 buckets in the same AWS Region.
 
 ### **Problem statement**
 
-A company stores important business documents in Mumbai. If the Mumbai Region experiences an outage, the company wants another copy of the documents in Singapore.
+ABC Bank stores important customer documents, KYC files, loan applications and transaction reports in an Amazon S3 bucket located in the Mumbai Region.
+
+Management is concerned about regional outages and wants to maintain another copy of these documents in the Singapore Region.
+
+The DevOps team needs to configure S3 Cross Region Replication so that eligible new objects uploaded to the Mumbai bucket are automatically replicated to the Singapore bucket.
 
 **Solution:**
 
@@ -179,8 +184,6 @@ Implement Cross-Region Replication.
 
 # **4. S3 Data Encryption**
 
-Topic 3 from your image
-
 ## **What is Data Encryption?**
 
 Encryption means converting readable data into an unreadable format so that unauthorized people cannot understand it.
@@ -201,8 +204,6 @@ The company wants to protect this information.
 We use encryption to protect data.
 
 ### **Types of S3 Encryption**
-
-
 
 **A. Encryption at Rest**
 
@@ -254,7 +255,6 @@ Answer: In SSE-S3, AWS manages the encryption keys. In SSE-KMS, AWS KMS provides
 
 # **5. S3 Bucket Policies**
 
-Topic 4 from your image
 
 ## **What is an S3 Bucket Policy?**
 
@@ -267,6 +267,10 @@ We can control:
 - Who can download files?
 - Who can delete objects?
 - Whether public access is allowed?
+
+
+<img width="1536" height="1024" alt="image" src="https://github.com/user-attachments/assets/046d2320-c36c-4a5d-a287-b7f8551fdd99" />
+
 
 **Real-time example:**
 
