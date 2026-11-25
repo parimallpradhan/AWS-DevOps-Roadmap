@@ -14,6 +14,7 @@ Amazon S3 is an object storage service provided by AWS. We can store different t
 <img width="923" height="616" alt="image" src="https://github.com/user-attachments/assets/0719fb86-dab5-4f53-b183-3bcc391b0f99" />
 
 
+
 ## **Real-time example:**
 
 Imagine an e-commerce application like Amazon.
@@ -319,6 +320,16 @@ Example policy:
 ```
 
 Replace the account ID, IAM user and bucket name with your actual details.
+
+| JSON Element | Simple Meaning |
+|---|---|
+| Version | Policy language version |
+| Statement | Contains permission rules |
+| Sid | Name of the permission rule |
+| Effect | Allow or Deny |
+| Principal | Who gets the permission |
+| Action | What action they can perform |
+| Resource | Which S3 bucket or objects are affected |
 
 **Important:** The example grants upload permission only through this policy. Other IAM policies or permissions may also affect the user's effective access.
 
