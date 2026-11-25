@@ -19,6 +19,7 @@ The Junior DevOps Engineer must install AWS CLI, configure authentication and ve
 - List EC2 instances in the Mumbai region.
 - Create an S3 bucket using AWS CLI.
 
+<img width="1536" height="1024" alt="image" src="https://github.com/user-attachments/assets/a3fa5473-b256-4bae-a5eb-b2648febb66e" />
 
 ## **1. What is AWS CLI?**
 
@@ -46,8 +47,6 @@ Using AWS CLI, you can create an S3 bucket with just one command:
 aws s3 mb s3://my-first-demo-bucket
 ```
 
-
-
 ## **2. Why do we need AWS CLI?**
 
 Imagine you are working as a DevOps Engineer in an e-commerce company.
@@ -62,6 +61,9 @@ Your company has:
 Managing all these resources manually through the AWS Console takes time.
 
 AWS CLI helps automate these operations.
+
+<img width="1536" height="1024" alt="image" src="https://github.com/user-attachments/assets/517b9b92-ddeb-4866-ae5f-2931a4d78608" />
+
 
 ### **Real-time use cases**
 
@@ -170,7 +172,15 @@ aws --version
 
 [image](https://www.google.com/s2/favicons?domain=https://docs.aws.amazon.com\&sz=32)
 
-AWS Command Line Interface+1
+## OR Install on Ubuntu
+
+<img width="1855" height="152" alt="image" src="https://github.com/user-attachments/assets/d56aaf25-0803-4870-b302-deaa483afd81" />
+
+```
+sudo apt  install awscli -y
+
+```
+
 
 ### **C. Install AWS CLI on macOS**
 
