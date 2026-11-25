@@ -3,12 +3,6 @@
 
 # **Jira Ticket: AWS CLI Installation and Configuration**
 
-AWS
-
-Beginner
-
-DevOps Engineer
-
 **Problem statement**
 
 An e-commerce company wants its DevOps team to manage AWS resources using command-line tools instead of performing every operation manually through the AWS Console.
