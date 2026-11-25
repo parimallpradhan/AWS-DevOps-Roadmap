@@ -526,7 +526,7 @@ Use S3 Static Website Hosting.
 10. Access the website endpoint.
 
 
-## [view Project](https://github.com/parimallpradhan/AWS-DevOps-Roadmap/blob/main/S3%20Bucket/Project-2%20-%20Static%20Website%20Hosting%20on%20Amazon%20S3.md)
+## [Static Website Project](https://github.com/parimallpradhan/AWS-DevOps-Roadmap/blob/main/S3%20Bucket/Project-2%20-%20Static%20Website%20Hosting%20on%20Amazon%20S3.md)
 
 **Important security point:**
 
