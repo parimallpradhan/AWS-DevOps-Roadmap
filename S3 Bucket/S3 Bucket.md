@@ -32,10 +32,6 @@ For example:
 <img width="926" height="342" alt="image" src="https://github.com/user-attachments/assets/10888a88-c24c-4dc1-8dc8-8262ad0c5c20" />
 
 
-[AWS Storage - Part 4: Amazon S3 - DEV Community](https://images.openai.com/static-rsc-4/XIOlpDCwljoY5lCMoQ8a42_xcTAMXon5jIpMFriNyuGMND7fNvAANVu3UN2-o9k59LsJQfWYHS43PdHYKg8xYYA4oKXn2SZunaEOpr6bcQq4bYAljdivtqI23aTPVBDJZE4o-iDP6TiO6BtjPeMlemcurRIYEUcMbLDBviuST7k?purpose=inline)
-
-[dev.to](https://dev.to/hulk-pham/aws-storage-part-4-amazon-s3-1kki?utm_source=chatgpt.com)
-
 **Important S3 terminology**
 
 | Component  | Meaning                                | Example             |
@@ -720,38 +716,10 @@ It also wants to implement security, disaster recovery, monitoring and cost opti
 | What is AWS Storage Gateway?       | Connects on-premises infrastructure with AWS storage.              |
 | Can we monitor S3?                 | Yes, using CloudTrail, CloudWatch, S3 logging and Storage Lens.    |
 
-# **13. Suggested Teaching Plan**
 
-Since these are intermediate S3 topics, I recommend teaching them across three sessions rather than rushing all nine topics into one hour.
 
-**Session 1 – S3 Security and Data Protection**
+## **Assignments**
 
-90 minutes
-
-- S3 Versioning – 20 minutes
-- S3 Replication – 25 minutes
-- Data Encryption – 20 minutes
-- Bucket Policies – 25 minutes
-
-**Session 2 – S3 Cost Optimization and Monitoring**
-
-60 minutes
-
-- Storage Classes – 25 minutes
-- Lifecycle Management – 15 minutes
-- Logging and Monitoring – 20 minutes
-
-**Session 3 – Advanced S3 Use Cases**
-
-60 minutes
-
-- Static Website Hosting – 20 minutes
-- AWS Snow Family – 15 minutes
-- Storage Gateway – 25 minutes
-
-## **Practical assignments for students**
-
-Ask students to implement these scenarios:
 
 1. **Versioning:** Create an S3 bucket, upload a file, modify it, upload it again and restore the previous version.
 2. **Replication:** Create two buckets in different AWS Regions and configure CRR.
@@ -761,4 +729,3 @@ Ask students to implement these scenarios:
 6. **Monitoring:** Configure CloudTrail S3 data events and inspect object activity.
 7. **Static Website:** Host a basic HTML website using S3.
 
-**My recommendation:** Start with Versioning, Replication, Encryption and Bucket Policies. These four topics are particularly important for AWS Cloud Support and DevOps Engineer interviews because they cover data protection, disaster recovery and security.
