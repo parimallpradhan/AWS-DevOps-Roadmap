@@ -664,10 +664,6 @@ An e-commerce company wants to store product images, customer documents, applica
 
 It also wants to implement security, disaster recovery, monitoring and cost optimization.
 
-[🔐 Amazon S3 Security: Best Practices for Data Protection - DEV Community](https://images.openai.com/static-rsc-4/mRW4DhME9toiYMjeIVFG0cZcBeQJ_ZK1_I84T2rD-7c_bBw65uojQfqCShj1WEkcZyjU2GTqyauoRuFVmmGLDVF69VR4wKCBvcSvYbB1YENTQXdWgU5ZTt5so0SSy-Qzk1auH90Ac4zgNfeUFERxSBqHypKQnTDHNkKQ3l4Ry5E?purpose=inline)
-
-[dev.to](https://dev.to/gurpreet_kaur_29/amazon-s3-security-best-practices-for-data-protection-4b0n?utm_source=chatgpt.com)
-
 ### **Complete architecture diagram**
 
 
