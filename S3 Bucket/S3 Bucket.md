@@ -1,4 +1,4 @@
-## **What is Amazon S3?**
+## **1. What is Amazon S3?**
 
 Amazon S3 is an object storage service provided by AWS. We can store different types of data such as:
 
@@ -475,9 +475,7 @@ Imagine a company wants to host its portfolio website.
 
 Instead of creating an EC2 instance and installing Apache or Nginx, it can upload website files to an S3 bucket and enable static website hosting.
 
-[Designing and Building a Static Website on AWS | Cliffable](https://images.openai.com/static-rsc-4/2wwkjSqA0p2mSRQzWkZQnKlUutXLDbOHQeYp7n0yI6V-JlVpEWktrsQUMEhNwoHBcUBjt0B2tLSREX-gtjXh_kPaMTr66sITIfb1FjrGM99-ADtVhSpaWxyFLFLxrrNT7R7hihODg80T95CTymMQReoudIfaqA5NxAzXso0-CzI?purpose=inline)
 
-[cliffable.com](https://cliffable.com/projects/static-site-on-aws.html?utm_source=chatgpt.com)
 
 ### **Architecture diagram**
 
