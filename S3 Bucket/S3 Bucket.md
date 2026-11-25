@@ -32,7 +32,7 @@ For example:
 <img width="926" height="342" alt="image" src="https://github.com/user-attachments/assets/10888a88-c24c-4dc1-8dc8-8262ad0c5c20" />
 
 
-**Important S3 terminology**
+## **Important S3 terminology or components**
 
 | Component  | Meaning                                | Example             |
 | ---------- | -------------------------------------- | ------------------- |
@@ -42,6 +42,9 @@ For example:
 | Region     | AWS geographical location              | ap-south-1          |
 | Version ID | Identifies a particular version        | Version 123abc      |
 
+<img width="942" height="635" alt="image" src="https://github.com/user-attachments/assets/7f533c50-9f17-4e0f-95c5-6c84e81963e5" />
+
+
 # **2. S3 Versioning**
 
 ## **What is S3 Versioning?**
@@ -50,35 +53,30 @@ S3 Versioning allows us to maintain multiple versions of the same object inside 
 
 Whenever we upload a new file with the same object key, S3 keeps the previous version instead of simply replacing it.
 
-**Real-time example:**
 
-Imagine a company stores an employee salary Excel file.
-
-Initially:
-
-`Employee-Salary.xlsx` → Salary = ₹30,000
-
-After one month, someone uploads a modified file:
-
-`Employee-Salary.xlsx` → Salary = ₹40,000
-
-After another month:
-
-`Employee-Salary.xlsx` → Salary = ₹50,000
-
-Without versioning, the previous file content would be replaced.
-
-With versioning, we can retrieve older versions.
-
-[Efficient Image Recovery at Scale Using Amazon S3 Version...](https://images.openai.com/static-rsc-4/GZKdOLGHwc7gHZguFO2Zajul-yc4_E3UO_8qPQO_ANQn_LjJYte08FnOuRiufIUq5AL2RfAfA0ECjMrlFK8nR2FWmHsmai0fTc3c8PTw1p2PZvCuLhzAYByzOOFU01OZvyBChg7sbPFSPdFdXZoxaB1cT2lpshAPUZhUlpduLnQ?purpose=inline)
-
-[tech.trivago.com](https://tech.trivago.com/post/2018-09-03-s3-versioning?utm_source=chatgpt.com)
 
 ### **Problem statement**
 
-A developer accidentally uploads an incorrect configuration file to an S3 bucket, replacing the previous working configuration.
 
-How can the DevOps team recover the previous file?
+
+The e-commerce development team stores product images in an S3 bucket named ecommerce-product-images.
+
+Initially, the team uploads a mobile phone image.
+
+Later, the developer replaces the mobile image with a new image. After that, another developer accidentally uploads a laptop image using the same object key.
+
+The original mobile image is no longer the current version.
+
+The company wants to maintain previous versions of product images so that accidentally overwritten images can be recovered.
+
+
+Requirements:
+- Enable S3 Versioning.
+- Maintain multiple versions of product images.
+- Recover an older version when required.
+- Verify version IDs in the S3 Console.
+
+## How can the DevOps team recover the previous file?
 
 ### **Solution**
 
