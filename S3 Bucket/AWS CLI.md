@@ -369,7 +369,7 @@ aws sts get-caller-identity
 
 # **1. EC2 – Elastic Compute Cloud**
 
-[【Amazon EC2】初心者が覚えるべき基本的なコマンドまとめ（Linux編） | 副業社長](https://images.openai.com/static-rsc-4/3ffQf0F3drG1C0whK_uawFGqjUH5ygWnrAZIlkd3HZoByinDBXa9BcIoLRgHIjhCmicdyHohopb9MGBKS2Tc-OzvYyK-0coXnxE8fm57QGXpxvYnCGHTRwS_1VS8cyZ3vrpPmWNXG-D-3XTVMAOPRivTbnTNb_f2H7pvi0Ht91U?purpose=inline)
+
 
 EC2 is used to create and manage virtual servers in AWS.
 
@@ -425,7 +425,7 @@ aws s3 cp mobile.jpg s3://my-demo-bucket/product-images/
 
 # **3. IAM – Identity and Access Management**
 
-[Security, Identity & Compliance  | AWS Architecture Center](https://images.openai.com/static-rsc-4/yW4y9F9z2I0-cHTZhSJ6ljYOvdyruAYQGQyRyQo3y8A9C86Yk_mPL-LxWsrWekV5Jx9ZC1_YmSLYtYOcMj-xbMoD48r4bud4c_G4m-8I3-alhYtXAlltXcG61i_yhkEAnF3Q15V0sFk9R1pMP-KcSaKkPJpfZNDMx5PiC1YxdO4?purpose=inline)
+
 
 IAM manages users, groups, roles and permissions in AWS.
 
@@ -456,7 +456,7 @@ aws iam attach-user-policy \
 
 # **4. RDS – Relational Database Service**
 
-[AWS RDS Logo Vector Download | Logowik](https://images.openai.com/static-rsc-4/YeBfzBYLpmBa4rFECPn6dIaYm1pe5V5uDk30jacz6MchZIvp30GgmTZ9jsZoxNdNCbrbe2NQkhGnxIAJ70tkKtiIcnrTMV1wmC1JkmO1JcRaLTjQ-ER-XKi-5vVR_Y0TNUI1nArWF62X9MveUIuo9kpXhSypuLTJb1XXgc_cp6Q?purpose=inline)
+
 
 RDS is used to create and manage relational databases such as MySQL, PostgreSQL and MariaDB.
 
@@ -482,7 +482,7 @@ aws rds create-db-snapshot \
 
 # **5. EBS – Elastic Block Store**
 
-[Cách khắc phục vấn đề performance khi khôi phục EBS volume từ snapshot | CloudMentorPro Blog](https://images.openai.com/static-rsc-4/wFIou5a8xDybhv5YdIqw8yhzVN_H6ElsFwZI2fWkGxZQGG4TmLLPQgPPzXv68nfSRGog64k-NEPVZGwsxmcRmH-piSAY7s5ox9F-AHWlVK7lJr7zmZHrZhHzUwgiIuKdl84_bByloUBAcid5_Xx5o61BULckVhpCxCtdiPeIC4M?purpose=inline)
+
 
 EBS provides block storage volumes for EC2 instances.
 
@@ -508,7 +508,7 @@ aws ec2 create-volume \
 
 # **6. VPC – Virtual Private Cloud**
 
-[File:AWS Simple Icons Virtual Private Cloud.svg - Wikimedia Commons](https://images.openai.com/static-rsc-4/fA-FIO3BaQnjvT9q_CrRVNLqEdnVAJdLHnaEU_KJnBlAFerDii0p4BWXkVnPe3U8e9S-B3Twq4cz_ltqKSuTA4ropYTRADJYchEtsXgsn4nGT6hx_AzJLnBBjiWJYhSFG1t7kRo5aJ0mpYeThGjEskNKtYuFFXgDRC846nQDIdQ?purpose=inline)
+
 
 VPC provides an isolated virtual network in AWS.
 
@@ -540,7 +540,7 @@ aws ec2 authorize-security-group-ingress \
 
 # **7. ELB – Elastic Load Balancing**
 
-[AWS Builder Center](https://images.openai.com/static-rsc-4/sHUlJDdS0P7CNv5HDRdbItDDW_1i-nqhuR-hfZxH8NZWnITk1FM_gVt3epAWi7blkerghgCrVsrg0Q-4mYyb1HsW1kPRWqYqddSFb0FpwCQD_pLiCmZqMt6WQa7NqJc4Fy8yolBkWgcBctmrCFvhMbnWJlQoWCG6EZXYFMps664?purpose=inline)
+
 
 ELB distributes incoming application traffic across multiple EC2 instances.
 
@@ -564,7 +564,7 @@ aws elbv2 register-targets \
 
 # **8. Auto Scaling**
 
-[Amazon EC2 Auto Scaling のCPU使用率に基づくスケーリングをAmazon CloudWatchから確認してみた | DevelopersIO](https://images.openai.com/static-rsc-4/EcD6huLzBtiOOAf3i-nVv1ituqbQNWAek0ue5kMkhmQ4CCVhpxi-7dhCofkKpfX__ge4aH1PbhXrd3SC7Ny9E10C79W-9lrvTA1iYbzaZja_tvFbyrur1OGD129toO-U9XQOO4AmCkqpaUhDKJGUH2Q2qd_U4kv79Yz4Nvs49S4?purpose=inline)
+
 
 Auto Scaling automatically increases or decreases EC2 instances based on demand and scaling policies.
 
@@ -588,7 +588,6 @@ aws autoscaling set-desired-capacity \
 
 # **9. CloudWatch**
 
-[CloudWatch RUMでサンプルアプリケーションをモニタリングしてみた | DevelopersIO](https://images.openai.com/static-rsc-4/SREZ-lNqfxMxb3ianAokp4FjPZ9y-Kcw0ylfcgtznG43PJ7t59ytcuABc8x2j1PTrwBMAQeZDqcnAyVSSMCCJTFu1UX285X6lhncoxJVKwtV_0wZbhm-ZH_tjiP3hrF1T868M_93tO2dVDfwnAivz3ZLK8QDGhLXaoEYD_WqALk?purpose=inline)
 
 CloudWatch is used to monitor AWS resources, metrics, logs and alarms.
 
@@ -617,7 +616,7 @@ aws cloudwatch get-metric-statistics \
 
 # **10. Lambda**
 
-[AWS Lambda – expandAPIs](https://images.openai.com/static-rsc-4/vZxZ9IVZ6aGW7_0M7I7hgnly8JuAUbYwfVHoNfiNgYRvkadKGBiH3ppEZq8ciPQ7TDDsRCVFgkU_xrCfcp7PInjwUEfIECjdVO0vs0ohV9cq0cs0OwoUoORsZpwIlUPrEDfYTtVCJp0eEEM2lpHYHxEV3aU7YISfc3J_-KywC5w?purpose=inline)
+
 
 Lambda allows us to execute code without managing servers.
 
@@ -634,7 +633,7 @@ Lambda allows us to execute code without managing servers.
 
 # **11. Route 53**
 
-[Amazon Route 53 | Amazon Web Services ブログ](https://images.openai.com/static-rsc-4/jaC4envz0ON5V0fZJwnuCHe3rGz0EdRwewvK1BAQYz8XAALhl3B9wiv-GTJdQMNnNqLLiHuGBHNMgFnSXVNiECxPc9lDqaw2YmpXC-z14C61QysnjmWno-w1RMQb96n4ozI12YUDfTTz_OocLU2eHQD9NKGQmFeHBIPy5-qXrq0?purpose=inline)
+
 
 Route 53 is used for DNS management and domain routing.
 
@@ -650,7 +649,6 @@ Route 53 is used for DNS management and domain routing.
 
 # **12. DynamoDB**
 
-[Amazon DynamoDB: Essential Concepts for Scalable Applications | by Rahul | Medium](https://images.openai.com/static-rsc-4/pTIfYRPnV5nYYFj3oaO_jHSu66mLhazNrqxO_VJ_lM6-v5GXLCoxW7nqJsxIm9_tiausWGdPvPtBDNrqG11uGV0FSu-KhlMUTMxbIHCQBMOozzEUOIkyrwDEaew0OKgrwwiwE3N5d8fRFHTBYIMZdYiCI8jCRzW5xlZD3q-9pUQ?purpose=inline)
 
 DynamoDB is a fully managed NoSQL database.
 
@@ -669,7 +667,7 @@ DynamoDB is a fully managed NoSQL database.
 
 # **13. SQS – Simple Queue Service**
 
-[Implementing AWS SQS Lambda Connection Simplified 101 | Hevo](https://images.openai.com/static-rsc-4/Eok_etnNcVhSNaTPr_CZyX3baEhEjlx4MwYgAm20bKcgwv-yywNNoSAIhC_9UpZ9LkPdObam8eZ0QsRCUhr6R-Szd_wnvioARDSGKJzVEHCJ-IhPsEJ5unfU0DgITUXnMWfuF2x4aGKbPLZ7A0UmZNnS_jo7Z6P50JFo5t0EhKQ?purpose=inline)
+
 
 SQS is used to exchange messages between distributed application components.
 
@@ -687,7 +685,7 @@ SQS is used to exchange messages between distributed application components.
 
 # **14. SNS – Simple Notification Service**
 
-[AWSの主要サービス – AWSの代表的なサービスとその活用例をわかりやすく解説 | 初めてのAWS | ネクスト株式会社](https://images.openai.com/static-rsc-4/ZwNIx0TxYF57R29kh6E0Gk0i9L2ymkm5WX_Jl92El9GA_9KCq0ikm9zJQxAaZqg7mAoBJETsebGrP3ZXWANHkNtipze3AMmcZ77hnhL7foSSSnA_AD2wK7auWoFizA4LZlZZPPthTfBaiqLXOOD1hsUJntuUWEHghmC5glI1G8M?purpose=inline)
+
 
 SNS is used to send notifications through email, SMS and other supported endpoints.
 
@@ -704,7 +702,6 @@ SNS is used to send notifications through email, SMS and other supported endpoin
 
 # **15. CloudTrail**
 
-[AWS CloudTrail network activity events for VPC endpoints now generally available | AWS News Blog](https://images.openai.com/static-rsc-4/zwYwru2nY05nXzfTPiT4CzAXTekZOK7PYiVJHt_Phn9sP8W6lhPi2PMS8t2CRqYXV-TtSwCCR86mBYfd9k6fNqlUaQzMFLuibWiJ0K3vWR9e2YqtJoY6t25e1Lr3FYIqTlVQ6flffQzIW8HrYGQZeVfHcVaG5iRUM803ucwipA4?purpose=inline)
 
 CloudTrail records account activity and API events for auditing.
 
@@ -726,7 +723,7 @@ aws cloudtrail lookup-events \
 
 # **16. ECR – Elastic Container Registry**
 
-[Amazon ECR 使用 - Simple Blog](https://images.openai.com/static-rsc-4/l08bzan1H7WUuShMu2vFig9ap2eMjNYXAtfS0cdYn0MWwwNZZBfsFcj3iYYJKwkdy5MklVq0ozWKQZOc4zvbbG81w8OigmAtYqS2ZiDfKPJUb94mmoYeEacSg4QhNoMCmEPTechichAFmqWPdqBe1zNBeGPQmNqLYY_AjwDnkuM?purpose=inline)
+
 
 ECR is used to store Docker container images.
 
@@ -758,7 +755,7 @@ docker push \
 
 # **17. Secrets Manager**
 
-[GitHub Actions を利用して AWS SAM のデプロイ環境をセットアップしてみた | DevelopersIO](https://images.openai.com/static-rsc-4/9WwvqWRVTYYCCf_VpSDK9ZGAB83B13sIoHZQpNcN3fgzFPZjLw8JNHYg5llllIk6q31Q8FVCErDw61bTIvr-MVfQHxiwA-azrcuBAoMDcTI8ti1x3_eg0YOOvZMMg47t38xYWPBLFaTPqpUJT03XbW4tFBGRI6-0l6yksxs709A?purpose=inline)
+
 
 Secrets Manager stores sensitive information such as database passwords and API credentials.
 
