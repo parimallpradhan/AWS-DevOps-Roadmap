@@ -1,5 +1,31 @@
 # **AWS CLI (Command Line Interface)**
 
+
+# **Jira Ticket: AWS CLI Installation and Configuration**
+
+AWS
+
+Beginner
+
+DevOps Engineer
+
+**Problem statement**
+
+An e-commerce company wants its DevOps team to manage AWS resources using command-line tools instead of performing every operation manually through the AWS Console.
+
+The Junior DevOps Engineer must install AWS CLI, configure authentication and verify connectivity with AWS.
+
+**Tasks:**
+
+- Install AWS CLI Version 2.
+- Verify installation using `aws --version`.
+- Configure AWS credentials.
+- Verify AWS identity using `aws sts get-caller-identity`.
+- List all S3 buckets.
+- List EC2 instances in the Mumbai region.
+- Create an S3 bucket using AWS CLI.
+
+
 ## **1. What is AWS CLI?**
 
 **AWS CLI stands for Amazon Web Services Command Line Interface.**
@@ -26,9 +52,7 @@ Using AWS CLI, you can create an S3 bucket with just one command:
 aws s3 mb s3://my-first-demo-bucket
 ```
 
-[Introduction to the AWS CLI](https://images.openai.com/static-rsc-4/WFg9JxyyCky4vS37nIBDgkQfbqJCTfEk1tdNDk-13ZgBVb960PUKKVTaBx1KgJLyMxFLDNCRNR1EY6ZVDT-d3MYPjtqXGge2DvLTXrfZJPNkhIEVnGiDnzOz68yul4i-0oVe6oMN2sY60NaNJmgP362Dq12jmKfqcTt665TziN4?purpose=inline)
 
-[sensei-infosec.netlify.app](https://sensei-infosec.netlify.app/cloud/aws/cli/2020/04/04/aws-cli.html?utm_source=chatgpt.com)
 
 ## **2. Why do we need AWS CLI?**
 
@@ -277,33 +301,11 @@ C:\Users\YourUsername\.aws\
 
 Never upload these files to GitHub or share their contents.
 
-## **8. Practical assignment for students**
 
-**Jira Ticket: AWS CLI Installation and Configuration**
 
-AWS
 
-Beginner
 
-DevOps Engineer
-
-**Problem statement**
-
-An e-commerce company wants its DevOps team to manage AWS resources using command-line tools instead of performing every operation manually through the AWS Console.
-
-The Junior DevOps Engineer must install AWS CLI, configure authentication and verify connectivity with AWS.
-
-**Tasks:**
-
-- Install AWS CLI Version 2.
-- Verify installation using `aws --version`.
-- Configure AWS credentials.
-- Verify AWS identity using `aws sts get-caller-identity`.
-- List all S3 buckets.
-- List EC2 instances in the Mumbai region.
-- Create an S3 bucket using AWS CLI.
-
-## **9. Frequently asked interview questions**
+## **8. Frequently asked interview questions**
 
 **Q1. What is AWS CLI?**
 
@@ -339,4 +341,4 @@ Yes. We can execute AWS CLI commands inside Jenkins pipelines to automate tasks 
 - [AWS CLI Installation Guide](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html?utm_source=chatgpt.com)
 - [AWS CLI Configuration Guide](https://docs.aws.amazon.com/us_en/cli/latest/userguide/getting-started-quickstart.html?utm_source=chatgpt.com)
 
-**My recommendation for teaching:** First install AWS CLI on Windows, configure it and demonstrate `aws s3 ls`. Then ask students to create an S3 bucket using CLI. This connects directly with your S3 lessons and gives students practical experience with AWS automation.
+
