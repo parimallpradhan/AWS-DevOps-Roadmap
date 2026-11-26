@@ -378,9 +378,24 @@ Not necessarily. We can select storage classes based on access requirements.
 
 <img width="1536" height="1024" alt="image" src="https://github.com/user-attachments/assets/b864f221-7595-4466-ade0-0d7394ea6c00" />
 
-![Uploading image.png…]()
+<img width="1224" height="1285" alt="image" src="https://github.com/user-attachments/assets/fa2679db-292e-4ec4-99e5-6d20becd3e36" />
 
 
+### Problem Statement
+
+The e-commerce application stores customer invoices in an S3 bucket named ecommerce-customer-invoices.
+
+Currently, all invoices are stored in S3 Standard. However, older invoices are rarely accessed, resulting in unnecessary storage expenses.
+
+Requirements
+1. Store new invoices in S3 Standard.
+2. Move invoices to Standard-IA after 30 days.
+3. Move invoices to Glacier Flexible Retrieval after 90 days from creation.
+4. Configure deletion after 365 days, subject to the retention policy.
+5. Verify the Lifecycle Policy configuration.
+Expected Result
+
+Automatically optimize S3 storage costs without manually changing the storage class of individual invoices.
 ### **Problem statement**
 
 A company stores 5 years of financial reports in S3.
