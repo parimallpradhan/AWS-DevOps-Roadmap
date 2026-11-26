@@ -378,6 +378,8 @@ Not necessarily. We can select storage classes based on access requirements.
 
 <img width="1536" height="1024" alt="image" src="https://github.com/user-attachments/assets/b864f221-7595-4466-ade0-0d7394ea6c00" />
 
+![Uploading image.png…]()
+
 
 ### **Problem statement**
 
