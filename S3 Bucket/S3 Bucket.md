@@ -376,6 +376,9 @@ Not necessarily. We can select storage classes based on access requirements.
 | S3 Glacier Deep Archive       | Very long-term archive                       | Compliance records         |
 | S3 Express One Zone           | Very low-latency, high-performance workloads | High-performance analytics |
 
+<img width="1536" height="1024" alt="image" src="https://github.com/user-attachments/assets/b864f221-7595-4466-ade0-0d7394ea6c00" />
+
+
 ### **Problem statement**
 
 A company stores 5 years of financial reports in S3.
